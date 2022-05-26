@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace LibraryManager.Domain.Models
 {
-    public class Librarian
+    public class Librarian : DomainObject
     {
-        public int Id { get; set; }
-
         public string Username { get; set; }
         public string Password { get; set; }
 

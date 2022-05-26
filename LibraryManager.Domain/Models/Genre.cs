@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace LibraryManager.Domain.Models
 {
-    public class Genre
+    public class Genre : DomainObject
     {
-        public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<Book> Books { get; set; }

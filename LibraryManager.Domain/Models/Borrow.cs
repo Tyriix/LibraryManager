@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryManager.Domain.Models
 {
-    public class Borrow
+    public class Borrow : DomainObject
     {
-        public int Id { get; set; }
-
         public DateTime BorrowedDate { get; set; }
         public DateTime ReturnedDate { get; set; }
 
