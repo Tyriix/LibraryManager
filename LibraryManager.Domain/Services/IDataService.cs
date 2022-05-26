@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace LibraryManager.Domain.Services
 {
-    public interface IDataService<T>
+    public interface ICollection<T>
     {
-        Task<IEnumerable<T>> GetAll();
+        Task<ICollection<T>> GetAll();
         Task<T> Get(int id);
         Task<T> Create(T entity);
         Task<T> Update(T entity);

@@ -6,7 +6,7 @@ namespace LibraryManager.Domain.Models
 {
     public class Client
     {
-        public int ClientId { get; set; }
+        public int Id { get; set; }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -14,6 +14,7 @@ namespace LibraryManager.Domain.Models
         public string Address { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public IEnumerable<Borrow> Borrows { get; set; }
+
+        public ICollection<Borrow> Borrows { get; set; }
     }
 }

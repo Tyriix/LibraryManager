@@ -10,6 +10,7 @@ namespace LibraryManager.Domain.Models
 
         public string Username { get; set; }
         public string Password { get; set; }
-        public IEnumerable<Borrow> Borrows { get; set; }
+
+        public ICollection<Borrow> Borrows { get; set; }
     }
 }
