@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LibraryManager.WPF.MVVM.ViewModels
 {
-    class HomeViewModel
+    class ClientsViewModel
     {
     }
 }

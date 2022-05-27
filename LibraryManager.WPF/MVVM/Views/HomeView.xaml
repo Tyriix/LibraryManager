@@ -6,13 +6,15 @@
              xmlns:local="clr-namespace:LibraryManager.WPF.MVVM.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    
     <StackPanel>
         <TextBlock Text="Welcome"
                    Foreground="White"
-                   FontSize="28"
-                   HorizontalAlignment="Left"
-                   Margin="0,0,0,20"/>
-        <StackPanel Orientation="Horizontal">
+                   FontSize="34"
+                   Margin="0,10,0,20"
+                   HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center">
             <Border Width="400"
                     Height="200">
                 <Border.Background>
@@ -28,7 +30,7 @@
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="placeholder"
+                        <TextBlock Text="{DynamicResource username}"
                                    Foreground="White"
                                    FontSize="18"
                                    Margin="20,10,10,0"/>

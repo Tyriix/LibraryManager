@@ -1,5 +1,6 @@
 ﻿using LibraryManager.Domain.Models;
 using System.Windows;
+using System.Windows.Input;
 
 namespace LibraryManager.WPF
 {
@@ -18,6 +19,13 @@ namespace LibraryManager.WPF
         {
             confirm = true;
             this.Close();
+        }
+        private void Draggable_Object_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
         }
     }
 }

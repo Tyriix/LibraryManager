@@ -14,12 +14,11 @@ using System.Windows.Shapes;
 namespace LibraryManager.WPF.MVVM.Views
 {
     /// <summary>
-    /// Logika interakcji dla klasy HomeView.xaml
+    /// Logika interakcji dla klasy ClientsView.xaml
     /// </summary>
-    
-    public partial class HomeView : UserControl
+    public partial class ClientsView : UserControl
     {
-        public HomeView()
+        public ClientsView()
         {
             InitializeComponent();
         }

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryManager.WPF"
+        xmlns:viewModel="clr-namespace:LibraryManager.WPF.ViewModels"
         mc:Ignorable="d"
         Height="600" Width="920"
         WindowStyle="None"
@@ -11,6 +12,10 @@
         Background="Transparent"
         AllowsTransparency="True"
         FontFamily="/Fonts/#Poppins">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
     <Border Background="#272537"
             CornerRadius="15">
         <Grid>
@@ -28,29 +33,59 @@
                    Margin="20,0,0,0"
                    Foreground="White"
                    FontSize="22"/>
-            <StackPanel Grid.Column="1">
-                <Button Content="X"
-                        Height="30"
-                        Width="30"
-                        Foreground="#D11A2A"
-                        HorizontalAlignment="Right"
-                        FontSize="14"
-                        FontWeight="Bold"
-                        Style="{StaticResource ExitButtonTheme}"
-                        Click="Confirm_Button_Click">
-                </Button>
+                <Grid Width="50"
+                        Height="10"
+                        Background="#353340"
+                        Grid.ColumnSpan="2"
+                        VerticalAlignment="Top"
+                        MouseDown="Draggable_Object_MouseDown">
+                <Border BorderThickness="0.5"
+                            BorderBrush="DarkGray">
+                </Border>
+                    <Rectangle VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Width="40"
+                               Height="0.5"
+                               Fill="DarkGray">
+                        
+                    </Rectangle>
+                </Grid>
+                <StackPanel Grid.Column="1">
+                    <Button Content="X"
+                            Height="30"
+                            Width="30"
+                            Foreground="#D11A2A"
+                            HorizontalAlignment="Right"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Style="{StaticResource ExitButtonTheme}"
+                            Click="Confirm_Button_Click">
+                    </Button>
+                    <Button Content="X"
+                            Height="30"
+                            Width="30"
+                            Foreground="#D11A2A"
+                            HorizontalAlignment="Right"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Style="{StaticResource ExitButtonTheme}"
+                            Click="Confirm_Button_Click" VerticalAlignment="Top">
+                    </Button>
             </StackPanel>
             <StackPanel Grid.Row="1">
                 <RadioButton Content="Home"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding homeViewCommand}"/>
                 <RadioButton Content="Clients"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding clientsViewCommand}"/>
                 <RadioButton Content="Borrowed"
                              Height="50"
                              Foreground="White"
@@ -80,29 +115,10 @@
                      Margin="5"
                      Grid.Column="1"
                      Style="{StaticResource ModernTextBox}"/>
-            <TextBlock Text="Logged in as:"
-                       Foreground="White"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"
-                       FontSize="14"
-                       Height="auto"
-                       Width="auto"
-                       Grid.Column="1" 
-                       Margin="381,0,0,0"/>
-            <Label Grid.Column="1" 
-                   Width="auto" 
-                   Height="auto"
-                   FontSize="14"
-                   Foreground="Green"
-                   VerticalContentAlignment="Center"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Left"
-                   HorizontalContentAlignment="Left"
-                   Content="{DynamicResource username}" 
-                   Margin="478,0,0,0"/>
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            Margin="10"/>
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
         </Grid>
 
     </Border>
