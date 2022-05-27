@@ -80,10 +80,30 @@
                      Margin="5"
                      Grid.Column="1"
                      Style="{StaticResource ModernTextBox}"/>
+            <TextBlock Text="Logged in as:"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       FontSize="14"
+                       Height="auto"
+                       Width="auto"
+                       Grid.Column="1" 
+                       Margin="381,0,0,0"/>
+            <Label Grid.Column="1" 
+                   Width="auto" 
+                   Height="auto"
+                   FontSize="14"
+                   Foreground="Green"
+                   VerticalContentAlignment="Center"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   HorizontalContentAlignment="Left"
+                   Content="{DynamicResource username}" 
+                   Margin="478,0,0,0"/>
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
                             Margin="10"/>
         </Grid>
-        
+
     </Border>
 </Window>

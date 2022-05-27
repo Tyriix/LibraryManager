@@ -22,7 +22,7 @@ namespace LibraryManager.WPF.MVVM.Views
             SqlConnection con = new SqlConnection("Server=.\\SQLEXPRESS;Database=LibraryManagerDb;Trusted_Connection=True");
             try
             {
-                if (con.State == System.Data.ConnectionState.Closed)
+                if (con.State == ConnectionState.Closed)
                     con.Open();
                 string query = "SELECT COUNT(1) FROM Librarians WHERE Username=@username AND Password=@password";
                 SqlCommand com = new SqlCommand(query, con);
@@ -31,7 +31,7 @@ namespace LibraryManager.WPF.MVVM.Views
                 com.Parameters.AddWithValue("@password", password.Password);
 
                 int count = Convert.ToInt32(com.ExecuteScalar());
-
+                Application.Current.Resources.Add("username", userName.Text);
                 if(count == 1)
                 {
                     MainWindow window = new MainWindow();

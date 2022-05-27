@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using LibraryManager.Domain.Models;
+using System.Windows;
 
 namespace LibraryManager.WPF
 {
