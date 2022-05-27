@@ -12,10 +12,5 @@ namespace LibraryManager.Domain.Models
         public string Email { get; set; }
 
         public ICollection<Borrow> Borrows { get; set; }
-
-        public override string ToString()
-        {
-            return FirstName + " " + Phone;
-        }
     }
 }

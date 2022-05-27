@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Fonts\" />
+    <Folder Include="Style\Fonts\" />
   </ItemGroup>
 
   <ItemGroup>

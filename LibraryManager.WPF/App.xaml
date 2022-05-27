@@ -7,11 +7,12 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
-                <ResourceDictionary Source="Theme/ExitButtonTheme.xaml"/>
-                <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
-                <ResourceDictionary Source="Theme/LoginButtonTheme.xaml"/>
-                <ResourceDictionary Source="Theme/MinimizeButtonTheme.xaml"/>
+                <ResourceDictionary Source="Style/Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Style/Theme/ExitButtonTheme.xaml"/>
+                <ResourceDictionary Source="Style/Theme/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Style/Theme/LoginButtonTheme.xaml"/>
+                <ResourceDictionary Source="Style/Theme/MinimizeButtonTheme.xaml"/>
+                <ResourceDictionary Source="Style/Theme/ListViewTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
                 <view:LoginView/>
