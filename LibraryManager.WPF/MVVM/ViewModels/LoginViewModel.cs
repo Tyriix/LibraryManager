@@ -1,8 +1,4 @@
 ﻿using Caliburn.Micro;
-using LibraryManager.WPF.Core;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LibraryManager.WPF.MVVM.ViewModels
 {
@@ -27,10 +23,6 @@ namespace LibraryManager.WPF.MVVM.ViewModels
                 _password = value;
                 NotifyOfPropertyChange(() => Password);
             }
-        }
-        public void LogIn(string username, string password)
-        {
-            Console.WriteLine();
         }
     }
 }
