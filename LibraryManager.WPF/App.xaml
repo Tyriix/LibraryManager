@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="Theme/ExitButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
                 <ResourceDictionary Source="Theme/LoginButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/MinimizeButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
                 <view:LoginView/>

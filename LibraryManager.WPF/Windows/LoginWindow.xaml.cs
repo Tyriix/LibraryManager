@@ -13,10 +13,15 @@ namespace LibraryManager.WPF
             InitializeComponent();
             DataContext = new LoginViewModel();
         }
-        private void Confirm_Button_Click(object sender, RoutedEventArgs e)
+        private void Exit_Button_Click(object sender, RoutedEventArgs e)
         {
             confirm = true;
             Close();
+        }
+        private void Minimize_Button_Click(object sender, RoutedEventArgs e)
+        {
+            confirm = true;
+            this.WindowState = WindowState.Minimized;
         }
     }
 }

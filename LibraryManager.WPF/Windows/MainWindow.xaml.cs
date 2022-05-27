@@ -15,10 +15,15 @@ namespace LibraryManager.WPF
             InitializeComponent();
         }
 
-        private void Confirm_Button_Click(object sender, RoutedEventArgs e)
+        private void Exit_Button_Click(object sender, RoutedEventArgs e)
         {
             confirm = true;
             this.Close();
+        }
+        private void Minimize_Button_Click(object sender, RoutedEventArgs e)
+        {
+            confirm = true;
+            this.WindowState = WindowState.Minimized;
         }
         private void Draggable_Object_MouseDown(object sender, MouseButtonEventArgs e)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManager.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,9 @@ namespace LibraryManager.WPF.MVVM.Views
         public ClientsView()
         {
             InitializeComponent();
+            List<Client> items = new List<Client>();
+            items.Add(new Client() { FirstName = "John Doe", Phone = "997997997" });
+            lvDataBinding.ItemsSource = items;
         }
     }
 }
