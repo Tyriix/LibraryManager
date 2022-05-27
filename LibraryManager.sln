@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManager.Domain", "Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManager.EntityFramework", "LibraryManager.EntityFramework\LibraryManager.EntityFramework.csproj", "{756464B3-099A-4E2A-A01A-38676BD1F00F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManager.WPF", "LibraryManager.WPF\LibraryManager.WPF.csproj", "{77DB9E7F-1117-4B6A-BAE4-D125931E32A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{756464B3-099A-4E2A-A01A-38676BD1F00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{756464B3-099A-4E2A-A01A-38676BD1F00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{756464B3-099A-4E2A-A01A-38676BD1F00F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77DB9E7F-1117-4B6A-BAE4-D125931E32A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77DB9E7F-1117-4B6A-BAE4-D125931E32A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77DB9E7F-1117-4B6A-BAE4-D125931E32A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77DB9E7F-1117-4B6A-BAE4-D125931E32A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
