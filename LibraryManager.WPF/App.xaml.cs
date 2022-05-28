@@ -3,6 +3,7 @@ using LibraryManager.Domain.Services;
 using LibraryManager.EntityFramework;
 using LibraryManager.EntityFramework.Services;
 using LibraryManager.WPF.MVVM.ViewModels;
+using LibraryManager.WPF.MVVM.ViewModels.Factories;
 using LibraryManager.WPF.State.Navigation;
 using LibraryManager.WPF.ViewModels;
 using Microsoft.EntityFrameworkCore;
@@ -22,8 +23,7 @@ namespace LibraryManager.WPF
         {
             IServiceProvider serviceProvider = CreateServiceProvider();
             
-            Window window = new MainWindow();
-            window.DataContext = serviceProvider.GetRequiredService<MainViewModel>();
+            Window window = serviceProvider.GetRequiredService<MainWindow>();
             window.Show();
             base.OnStartup(e);
         }
@@ -36,8 +36,14 @@ namespace LibraryManager.WPF
             services.AddSingleton<IDataService<Client>, GenericDataService<Client>>();
             services.AddSingleton<IAddClientService, AddClientService>();
 
+            services.AddSingleton<ILibraryManagerAbstractFactory, LibraryManagerViewModelAbstractFactory>();
+            services.AddSingleton<ILibraryManagerViewModelFactory<HomeViewModel>, HomeViewModelFactory>();
+            services.AddSingleton<ILibraryManagerViewModelFactory<AddClientViewModel>, AddClientViewModelFactory>();
+
             services.AddScoped<INavigator, Navigator>();
             services.AddScoped<MainViewModel>();
+
+            services.AddScoped(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
             return services.BuildServiceProvider();
         }
     }

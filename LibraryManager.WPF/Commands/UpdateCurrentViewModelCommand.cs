@@ -1,4 +1,5 @@
 ﻿using LibraryManager.WPF.MVVM.ViewModels;
+using LibraryManager.WPF.MVVM.ViewModels.Factories;
 using LibraryManager.WPF.State.Navigation;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,12 @@ namespace LibraryManager.WPF.Commands
     public class UpdateCurrentViewModelCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-
+        private readonly ILibraryManagerAbstractFactory _viewModelFactory;
         private readonly INavigator _navigator;
 
-        public UpdateCurrentViewModelCommand(INavigator navigator)
+        public UpdateCurrentViewModelCommand(ILibraryManagerAbstractFactory viewModelFactory, INavigator navigator)
         {
+            _viewModelFactory = viewModelFactory;
             _navigator = navigator;
         }
 
@@ -27,17 +29,7 @@ namespace LibraryManager.WPF.Commands
         {
             if (parameter is ViewType viewType)
             {
-                switch (viewType)
-                {
-                    case ViewType.Home:
-                        _navigator.CurrentViewModel = new HomeViewModel();
-                        break;
-                    case ViewType.AddClient:
-                        _navigator.CurrentViewModel = new AddClientViewModel();
-                        break;
-                    default:
-                        break;
-                }
+                _navigator.CurrentViewModel = _viewModelFactory.CreateViewModel(viewType);
             }
         }
     }

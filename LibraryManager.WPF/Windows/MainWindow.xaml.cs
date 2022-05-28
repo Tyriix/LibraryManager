@@ -10,9 +10,10 @@ namespace LibraryManager.WPF
     public partial class MainWindow : Window
     {
         public bool Confirm { get; set; }
-        public MainWindow()
+        public MainWindow(object dataContext)
         {
             InitializeComponent();
+            DataContext = dataContext;
         }
 
         private void Exit_Button_Click(object sender, RoutedEventArgs e)

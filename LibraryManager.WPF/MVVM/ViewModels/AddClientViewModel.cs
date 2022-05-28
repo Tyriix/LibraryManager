@@ -21,7 +21,7 @@ namespace LibraryManager.WPF.MVVM.ViewModels
         //public string Firstname
         //{
         //    get { return _firstname; }
-        //    set 
+        //    set
         //    {
         //        _firstname = value;
         //        OnPropertyChanged(nameof(Firstname));
@@ -44,7 +44,7 @@ namespace LibraryManager.WPF.MVVM.ViewModels
         //public string City
         //{
         //    get { return _city; }
-        //    set 
+        //    set
         //    {
         //        _city = value;
         //        OnPropertyChanged(nameof(City));

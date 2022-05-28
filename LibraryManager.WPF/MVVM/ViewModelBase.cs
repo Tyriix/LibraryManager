@@ -1,7 +1,8 @@
-﻿
+﻿using LibraryManager.WPF.Models;
+
 namespace LibraryManager.WPF.MVVM.ViewModels
 {
-    public class ViewModelBase
+    public class ViewModelBase : ObservableObject
     {
     }
 }

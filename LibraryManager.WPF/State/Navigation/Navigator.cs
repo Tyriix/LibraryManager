@@ -1,6 +1,7 @@
 ﻿using LibraryManager.WPF.Commands;
 using LibraryManager.WPF.Models;
 using LibraryManager.WPF.MVVM.ViewModels;
+using LibraryManager.WPF.MVVM.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,8 +25,11 @@ namespace LibraryManager.WPF.State.Navigation
                 OnPropertyChanged(nameof(CurrentViewModel));
             }
         }
-        public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(this);
+        public ICommand UpdateCurrentViewModelCommand { get; set; }
 
-        
+        public Navigator(ILibraryManagerAbstractFactory viewModelFactory)
+        {
+            UpdateCurrentViewModelCommand = new UpdateCurrentViewModelCommand(viewModelFactory, this);
+        }
     }
 }

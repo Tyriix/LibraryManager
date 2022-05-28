@@ -36,8 +36,8 @@ namespace LibraryManager.WPF.MVVM.Views
                 Application.Current.Resources.Add("username", userName.Text);
                 if(count == 1)
                 {
-                    MainWindow window = new MainWindow();
-                    window.Show();
+                    //MainWindow window = new MainWindow();
+                    //window.Show();
                     Application.Current.Windows[0].Close();
                 }
                 else
