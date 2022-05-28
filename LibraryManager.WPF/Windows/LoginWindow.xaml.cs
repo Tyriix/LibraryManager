@@ -1,5 +1,6 @@
 ﻿using LibraryManager.WPF.MVVM.ViewModels;
 using System.Windows;
+
 namespace LibraryManager.WPF
 {
     /// <summary>
@@ -7,7 +8,7 @@ namespace LibraryManager.WPF
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public bool confirm { get; set; }
+        public bool Confirm { get; set; }
         public LoginWindow()
         {
             InitializeComponent();
@@ -15,13 +16,13 @@ namespace LibraryManager.WPF
         }
         private void Exit_Button_Click(object sender, RoutedEventArgs e)
         {
-            confirm = true;
+            Confirm = true;
             Close();
         }
         private void Minimize_Button_Click(object sender, RoutedEventArgs e)
         {
-            confirm = true;
-            this.WindowState = WindowState.Minimized;
+            Confirm = true;
+            WindowState = WindowState.Minimized;
         }
     }
 }

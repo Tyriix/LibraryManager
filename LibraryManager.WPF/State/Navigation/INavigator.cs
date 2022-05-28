@@ -1,7 +1,4 @@
 ﻿using LibraryManager.WPF.MVVM.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
 namespace LibraryManager.WPF.State.Navigation

@@ -2,10 +2,6 @@
 using LibraryManager.WPF.Models;
 using LibraryManager.WPF.MVVM.ViewModels;
 using LibraryManager.WPF.MVVM.ViewModels.Factories;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
 using System.Windows.Input;
 
 namespace LibraryManager.WPF.State.Navigation

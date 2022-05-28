@@ -6,9 +6,7 @@ using LibraryManager.WPF.MVVM.ViewModels;
 using LibraryManager.WPF.MVVM.ViewModels.Factories;
 using LibraryManager.WPF.State.Navigation;
 using LibraryManager.WPF.ViewModels;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using System;
 using System.Windows;
 

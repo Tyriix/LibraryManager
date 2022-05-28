@@ -2,8 +2,6 @@
 using LibraryManager.Domain.Services;
 using LibraryManager.WPF.MVVM.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Input;
 

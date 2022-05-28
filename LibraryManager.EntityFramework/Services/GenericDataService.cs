@@ -17,58 +17,48 @@ namespace LibraryManager.EntityFramework.Services
 
         public async Task<T> Create(T entity)
         {
-            using(LibraryManagerDbContext context = _contextFactory.CreateDbContext())
-            {
-                EntityEntry<T> createdResult = await context.Set<T>().AddAsync(entity);
-                await context.SaveChangesAsync();
+            using LibraryManagerDbContext context = _contextFactory.CreateDbContext();
+            EntityEntry<T> createdResult = await context.Set<T>().AddAsync(entity);
+            await context.SaveChangesAsync();
 
 
-                return createdResult.Entity;
-            }
+            return createdResult.Entity;
         }
 
         public async Task<bool> Delete(int id)
         {
-            using (LibraryManagerDbContext context = _contextFactory.CreateDbContext())
-            {
-                T entity = await context.Set<T>().FirstOrDefaultAsync((e) => e.Id == id);
-                context.Set<T>().Remove(entity);
-                await context.SaveChangesAsync();
+            using LibraryManagerDbContext context = _contextFactory.CreateDbContext();
+            T entity = await context.Set<T>().FirstOrDefaultAsync((e) => e.Id == id);
+            context.Set<T>().Remove(entity);
+            await context.SaveChangesAsync();
 
-                return true;
-            }
+            return true;
         }
 
         public async Task<T> Get(int id)
         {
-            using (LibraryManagerDbContext context = _contextFactory.CreateDbContext())
-            {
-                T entity = await context.Set<T>().FirstOrDefaultAsync((e) => e.Id == id);
+            using LibraryManagerDbContext context = _contextFactory.CreateDbContext();
+            T entity = await context.Set<T>().FirstOrDefaultAsync((e) => e.Id == id);
 
-                return entity;
-            }
+            return entity;
         }
 
         public async Task<ICollection<T>> GetAll()
         {
-            using (LibraryManagerDbContext context = _contextFactory.CreateDbContext())
-            {
-                ICollection<T> entities = await context.Set<T>().ToListAsync();
+            using LibraryManagerDbContext context = _contextFactory.CreateDbContext();
+            ICollection<T> entities = await context.Set<T>().ToListAsync();
 
-                return entities;
-            }
+            return entities;
         }
 
         public async Task<T> Update(int id, T entity)
         {
-            using (LibraryManagerDbContext context = _contextFactory.CreateDbContext())
-            {
-                entity.Id = id;
-                context.Set<T>().Update(entity);
-                await context.SaveChangesAsync();
+            using LibraryManagerDbContext context = _contextFactory.CreateDbContext();
+            entity.Id = id;
+            context.Set<T>().Update(entity);
+            await context.SaveChangesAsync();
 
-                return entity;
-            }
+            return entity;
         }
     }
 }
