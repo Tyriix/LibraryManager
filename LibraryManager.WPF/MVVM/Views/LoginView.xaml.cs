@@ -25,8 +25,10 @@ namespace LibraryManager.WPF.MVVM.Views
                 if (con.State == ConnectionState.Closed)
                     con.Open();
                 string query = "SELECT COUNT(1) FROM Librarians WHERE Username=@username AND Password=@password";
-                SqlCommand com = new SqlCommand(query, con);
-                com.CommandType = CommandType.Text;
+                SqlCommand com = new SqlCommand(query, con)
+                {
+                    CommandType = CommandType.Text
+                };
                 com.Parameters.AddWithValue("@username", userName.Text);
                 com.Parameters.AddWithValue("@password", password.Password);
 

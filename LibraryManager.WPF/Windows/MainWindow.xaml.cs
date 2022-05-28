@@ -9,7 +9,7 @@ namespace LibraryManager.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public bool confirm { get; set; }
+        public bool Confirm { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -17,19 +17,19 @@ namespace LibraryManager.WPF
 
         private void Exit_Button_Click(object sender, RoutedEventArgs e)
         {
-            confirm = true;
-            this.Close();
+            Confirm = true;
+            Close();
         }
         private void Minimize_Button_Click(object sender, RoutedEventArgs e)
         {
-            confirm = true;
-            this.WindowState = WindowState.Minimized;
+            Confirm = true;
+            WindowState = WindowState.Minimized;
         }
         private void Draggable_Object_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.ChangedButton == MouseButton.Left)
             {
-                this.DragMove();
+                DragMove();
             }
         }
     }

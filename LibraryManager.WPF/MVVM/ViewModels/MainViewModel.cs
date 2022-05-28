@@ -1,39 +1,17 @@
-﻿using LibraryManager.WPF.Core;
-using LibraryManager.WPF.MVVM.ViewModels;
+﻿using LibraryManager.WPF.MVVM.ViewModels;
+using LibraryManager.WPF.State.Navigation;
 
 namespace LibraryManager.WPF.ViewModels
 {
-    class MainViewModel : ObservableObject
+    public class MainViewModel : ViewModelBase
     {
-        public RelayCommand homeViewCommand { get; set; }
-        public RelayCommand clientsViewCommand { get; set; }
-        public HomeViewModel HomeVM { get; set; }
-        public ClientsViewModel ClientsVM { get; set; }
-        private object _currentView;
+        public INavigator Navigator { get; set; }
 
-        public object CurrentView
+        public MainViewModel(INavigator navigator)
         {
-            get { return _currentView; }
-            set
-            {
-                _currentView = value;
-                OnPropertyChanged();
-            }
-        }
-        public MainViewModel()
-        {
-            HomeVM = new HomeViewModel();
-            ClientsVM = new ClientsViewModel();
-            CurrentView = HomeVM;
+            Navigator = navigator;
 
-            homeViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = HomeVM;
-            });
-            clientsViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = ClientsVM;
-            });
+            Navigator.UpdateCurrentViewModelCommand.Execute(ViewType.Home);
         }
     }
 }

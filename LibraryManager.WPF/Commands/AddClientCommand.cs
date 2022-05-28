@@ -29,15 +29,15 @@ namespace LibraryManager.WPF.Commands
         {
             try
             {
-                Client client = await _addClientService.AddClient(new Client()
-                {
-                    FirstName = _addViewModel.Firstname,
-                    LastName = _addViewModel.Lastname,
-                    City = _addViewModel.City,
-                    Address = _addViewModel.Address,
-                    Phone = _addViewModel.Phone,
-                    Email = _addViewModel.Email
-                });
+                //Client client = await _addClientService.AddClient(new Client()
+                //{
+                //    FirstName = _addViewModel.Firstname,
+                //    LastName = _addViewModel.Lastname,
+                //    City = _addViewModel.City,
+                //    Address = _addViewModel.Address,
+                //    Phone = _addViewModel.Phone,
+                //    Email = _addViewModel.Email
+                //});
 
                 MessageBox.Show("New client added.");
             }

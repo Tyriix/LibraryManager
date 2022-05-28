@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LibraryManager.WPF.MVVM.Views
+namespace LibraryManager.WPF.Controls
 {
     /// <summary>
-    /// Logika interakcji dla klasy AddClientView.xaml
+    /// Logika interakcji dla klasy NavigationBar.xaml
     /// </summary>
-    public partial class AddClientView : UserControl
+    public partial class NavigationBar : UserControl
     {
-        public AddClientView()
+        public NavigationBar()
         {
             InitializeComponent();
         }
