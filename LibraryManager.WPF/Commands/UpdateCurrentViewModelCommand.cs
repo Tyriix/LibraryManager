@@ -11,10 +11,10 @@ namespace LibraryManager.WPF.Commands
     public class UpdateCurrentViewModelCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        private readonly ILibraryManagerAbstractFactory _viewModelFactory;
+        private readonly IRootLibraryManagerViewModelFactory _viewModelFactory;
         private readonly INavigator _navigator;
 
-        public UpdateCurrentViewModelCommand(ILibraryManagerAbstractFactory viewModelFactory, INavigator navigator)
+        public UpdateCurrentViewModelCommand(IRootLibraryManagerViewModelFactory viewModelFactory, INavigator navigator)
         {
             _viewModelFactory = viewModelFactory;
             _navigator = navigator;

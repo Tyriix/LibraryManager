@@ -5,12 +5,12 @@ using System.Text;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.Factories
 {
-    public class LibraryManagerViewModelAbstractFactory : ILibraryManagerAbstractFactory
+    public class RootLibraryManagerViewModelFactory : IRootLibraryManagerViewModelFactory
     {
         private readonly ILibraryManagerViewModelFactory<HomeViewModel> _homeViewModelFactory;
         private readonly ILibraryManagerViewModelFactory<AddClientViewModel> _addClientViewModelFactory;
 
-        public LibraryManagerViewModelAbstractFactory(ILibraryManagerViewModelFactory<HomeViewModel> homeViewModelFactory, 
+        public RootLibraryManagerViewModelFactory(ILibraryManagerViewModelFactory<HomeViewModel> homeViewModelFactory, 
             ILibraryManagerViewModelFactory<AddClientViewModel> addClientViewModelFactory)
         {
             _homeViewModelFactory = homeViewModelFactory;

@@ -36,13 +36,13 @@ namespace LibraryManager.WPF
             services.AddSingleton<IDataService<Client>, GenericDataService<Client>>();
             services.AddSingleton<IAddClientService, AddClientService>();
 
-            services.AddSingleton<ILibraryManagerAbstractFactory, LibraryManagerViewModelAbstractFactory>();
+            services.AddSingleton<IRootLibraryManagerViewModelFactory, RootLibraryManagerViewModelFactory>();
             services.AddSingleton<ILibraryManagerViewModelFactory<HomeViewModel>, HomeViewModelFactory>();
             services.AddSingleton<ILibraryManagerViewModelFactory<AddClientViewModel>, AddClientViewModelFactory>();
 
             services.AddScoped<INavigator, Navigator>();
             services.AddScoped<MainViewModel>();
-
+            services.AddScoped<AddClientViewModel>();
             services.AddScoped(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
             return services.BuildServiceProvider();
         }

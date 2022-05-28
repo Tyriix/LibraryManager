@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.Factories
 {
-    public interface ILibraryManagerAbstractFactory
+    public interface IRootLibraryManagerViewModelFactory
     {
         ViewModelBase CreateViewModel(ViewType viewType);
     }

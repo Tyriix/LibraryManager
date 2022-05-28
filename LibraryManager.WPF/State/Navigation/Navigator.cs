@@ -27,7 +27,7 @@ namespace LibraryManager.WPF.State.Navigation
         }
         public ICommand UpdateCurrentViewModelCommand { get; set; }
 
-        public Navigator(ILibraryManagerAbstractFactory viewModelFactory)
+        public Navigator(IRootLibraryManagerViewModelFactory viewModelFactory)
         {
             UpdateCurrentViewModelCommand = new UpdateCurrentViewModelCommand(viewModelFactory, this);
         }
