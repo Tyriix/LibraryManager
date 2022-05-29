@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManager.EntityFramew
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManager.WPF", "LibraryManager.WPF\LibraryManager.WPF.csproj", "{77DB9E7F-1117-4B6A-BAE4-D125931E32A5}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LibraryManager.Setup", "LibraryManager.Setup\LibraryManager.Setup.vdproj", "{7FAF09D9-8099-4265-BD6A-35691B9DF600}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{77DB9E7F-1117-4B6A-BAE4-D125931E32A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77DB9E7F-1117-4B6A-BAE4-D125931E32A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77DB9E7F-1117-4B6A-BAE4-D125931E32A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FAF09D9-8099-4265-BD6A-35691B9DF600}.Debug|Any CPU.ActiveCfg = Debug
+		{7FAF09D9-8099-4265-BD6A-35691B9DF600}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
