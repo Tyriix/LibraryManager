@@ -8,16 +8,22 @@ namespace LibraryManager.Domain.Services.AuthorServices
 {
     public class AuthorService : IAuthorService
     {
+
         private readonly IDataService<Author> _authorService;
 
         public AuthorService(IDataService<Author> authorService)
         {
             _authorService = authorService;
         }
-
-        public Task<Author> AddAuthor(Author author)
+        public async Task<Author> AddAuthor(Author author)
         {
-            throw new NotImplementedException();
+            Author newAuthor = new Author()
+            {
+                FirstName = author.FirstName,
+                LastName = author.LastName,
+            };
+            await _authorService.Create(newAuthor);
+            return newAuthor;
         }
         public ICollection<Author> GetAuthors()
         {

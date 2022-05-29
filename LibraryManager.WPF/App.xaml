@@ -19,13 +19,7 @@
                 <view:LoginView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
-                <view:HomeView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AddClientViewModel}">
-                <view:AddClientView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AddGenreViewModel}">
-                <view:AddGenreView />
+                <view:HomeView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:ClientsViewModel}">
                 <view:ClientsView/>
@@ -35,6 +29,15 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:AuthorsViewModel}">
                 <view:AuthorsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddClientViewModel}">
+                <view:AddClientView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddGenreViewModel}">
+                <view:AddGenreView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddAuthorViewModel}">
+                <view:AddAuthorView />
             </DataTemplate>
             <!--<DataTemplate DataType="{x:Type viewModel:ClientsViewModel}">
                 <view:ClientsView/>
