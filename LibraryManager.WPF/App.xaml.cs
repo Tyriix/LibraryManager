@@ -1,6 +1,7 @@
 ﻿using LibraryManager.Domain.Models;
 using LibraryManager.Domain.Services;
 using LibraryManager.Domain.Services.AuthorServices;
+using LibraryManager.Domain.Services.BookServices;
 using LibraryManager.Domain.Services.ClientServices;
 using LibraryManager.Domain.Services.GenreServices;
 using LibraryManager.EntityFramework;
@@ -12,6 +13,7 @@ using LibraryManager.WPF.State.Navigation;
 using LibraryManager.WPF.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace LibraryManager.WPF
@@ -23,16 +25,29 @@ namespace LibraryManager.WPF
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            //IDataService<Client> dataService = new GenericDataService<Client>(new EntityFramework.LibraryManagerDbContextFactory());
-            //IGetClientsService getClientsService = new GetClientsService(dataService);
+            //IDataService<Book> bookDataService = new GenericDataService<Book>(new LibraryManagerDbContextFactory());
+            //IDataService<Author> authorDataService = new GenericDataService<Author>(new LibraryManagerDbContextFactory());
+            //IDataService<Genre> genreDataService = new GenericDataService<Genre>(new LibraryManagerDbContextFactory());
 
-            //var clients = getClientsService.GetClients();
-            //foreach (var item in clients)
+            //IBookService bookService = new BookService(bookDataService, authorDataService, genreDataService);
+
+            //Author author = await authorDataService.Get(1);
+            //Genre genre = await genreDataService.Get(1);
+            //Book newBook = new Book()
             //{
-            //    MessageBox.Show(item.FirstName);
-            //}
+            //    Title = "TestBook1",
+            //    PageCount = 100,
+            //    PublishDate = DateTime.Now,
+            //    GenreId = genre.Id,
+            //    AuthorId = author.Id
+            //};
+
+            //await bookService.AddBook(newBook, author, genre);
+            //Environment.Exit(0);
+
+
             IServiceProvider serviceProvider = CreateServiceProvider();
-            
+
             Window window = serviceProvider.GetRequiredService<MainWindow>();
             window.Show();
             base.OnStartup(e);
