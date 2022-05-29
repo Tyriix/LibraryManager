@@ -2,13 +2,11 @@
 using LibraryManager.Domain.Services;
 using LibraryManager.Domain.Services.BookServices;
 using LibraryManager.EntityFramework.Services;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Windows.Input;
 
-namespace LibraryManager.WPF.MVVM.ViewModels
+namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
 {
     public class BooksViewModel : ViewModelBase
     {

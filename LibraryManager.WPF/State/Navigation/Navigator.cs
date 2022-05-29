@@ -1,8 +1,5 @@
-﻿using LibraryManager.WPF.Commands;
-using LibraryManager.WPF.Models;
+﻿using LibraryManager.WPF.Models;
 using LibraryManager.WPF.MVVM.ViewModels;
-using LibraryManager.WPF.MVVM.ViewModels.Factories;
-using System.Windows.Input;
 
 namespace LibraryManager.WPF.State.Navigation
 {

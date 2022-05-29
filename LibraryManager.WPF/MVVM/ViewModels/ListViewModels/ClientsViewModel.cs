@@ -2,17 +2,13 @@
 using LibraryManager.Domain.Services;
 using LibraryManager.Domain.Services.ClientServices;
 using LibraryManager.EntityFramework.Services;
-using LibraryManager.WPF.Commands;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-namespace LibraryManager.WPF.MVVM.ViewModels
+
+namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
 {
-    
+
     public class ClientsViewModel : ViewModelBase
     {
         readonly IDataService<Client> dataService = new GenericDataService<Client>(new EntityFramework.LibraryManagerDbContextFactory());

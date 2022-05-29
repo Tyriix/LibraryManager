@@ -15,16 +15,6 @@ namespace LibraryManager.EntityFramework
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Author>().HasMany(a => a.Books).WithOne(b => b.Author).OnDelete(DeleteBehavior.Cascade);
-            //modelBuilder.Entity<Genre>().HasMany(g => g.Books).WithOne(g => g.Genre).OnDelete(DeleteBehavior.Cascade);
-            //modelBuilder.Entity<Book>().HasMany(c => c.Borrow).WithOne(b => b.Book);
-
-            //modelBuilder.Entity<Client>().HasMany(c => c.Borrows).WithOne(b => b.Client).OnDelete(DeleteBehavior.Cascade);
-
-            //modelBuilder.Entity<Book>().OwnsOne(a => a.Author);
-            //modelBuilder.Entity<Author>().HasMany(b => Books);
-            //modelBuilder.Entity<Genre>().HasMany(b => b.Books);
-
             base.OnModelCreating(modelBuilder);
         }
     }

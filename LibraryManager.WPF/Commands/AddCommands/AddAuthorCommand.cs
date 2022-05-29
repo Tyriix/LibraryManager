@@ -2,8 +2,6 @@
 using LibraryManager.Domain.Services.AuthorServices;
 using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Input;
 
@@ -35,7 +33,7 @@ namespace LibraryManager.WPF.Commands.AddCommands
                     LastName = _addViewModel.Lastname
                 });
 
-                MessageBox.Show("New client added.");
+                MessageBox.Show("New author added.");
             }
             catch (Exception e)
             {

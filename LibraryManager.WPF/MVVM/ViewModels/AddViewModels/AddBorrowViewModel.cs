@@ -1,8 +1,6 @@
 ﻿using LibraryManager.Domain.Services.BorrowServices;
 using LibraryManager.WPF.Commands.AddCommands;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels

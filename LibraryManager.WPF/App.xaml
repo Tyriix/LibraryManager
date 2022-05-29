@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:LibraryManager.WPF"
              xmlns:viewModel="clr-namespace:LibraryManager.WPF.MVVM.ViewModels"
              xmlns:addViewModel="clr-namespace:LibraryManager.WPF.MVVM.ViewModels.AddViewModels"
+             xmlns:listViewModel="clr-namespace:LibraryManager.WPF.MVVM.ViewModels.ListViewModels"
              xmlns:view="clr-namespace:LibraryManager.WPF.MVVM.Views">
     <Application.Resources>
         <ResourceDictionary>
@@ -17,25 +18,22 @@
                 <ResourceDictionary Source="Style/Theme/AddButtonTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
             
-            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
-                <view:LoginView/>
-            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:ClientsViewModel}">
+            <DataTemplate DataType="{x:Type listViewModel:ClientsViewModel}">
                 <view:ClientsView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:GenresViewModel}">
+            <DataTemplate DataType="{x:Type listViewModel:GenresViewModel}">
                 <view:GenresView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AuthorsViewModel}">
+            <DataTemplate DataType="{x:Type listViewModel:AuthorsViewModel}">
                 <view:AuthorsView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:BooksViewModel}">
+            <DataTemplate DataType="{x:Type listViewModel:BooksViewModel}">
                 <view:BooksView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:BorrowsViewModel}">
+            <DataTemplate DataType="{x:Type listViewModel:BorrowsViewModel}">
                 <view:BorrowsView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type addViewModel:AddClientViewModel}">

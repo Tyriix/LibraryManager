@@ -8,10 +8,10 @@ namespace LibraryManager.WPF.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        private readonly IRootLibraryManagerViewModelFactory _rootLibraryManagerViewModelFactory;
+        private readonly ILibraryManagerViewModelFactory _rootLibraryManagerViewModelFactory;
         public INavigator Navigator { get; set; }
         public ICommand UpdateCurrentViewModelCommand { get; }
-        public MainViewModel(INavigator navigator, IRootLibraryManagerViewModelFactory rootLibraryManagerViewModelFactory)
+        public MainViewModel(INavigator navigator, ILibraryManagerViewModelFactory rootLibraryManagerViewModelFactory)
         {
             Navigator = navigator;
             _rootLibraryManagerViewModelFactory = rootLibraryManagerViewModelFactory;

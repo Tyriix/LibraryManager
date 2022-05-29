@@ -1,13 +1,10 @@
 ﻿using LibraryManager.Domain.Models;
 using LibraryManager.Domain.Services;
-using LibraryManager.Domain.Services.AuthorServices;
 using LibraryManager.Domain.Services.BookServices;
 using LibraryManager.EntityFramework;
 using LibraryManager.EntityFramework.Services;
 using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Input;
 

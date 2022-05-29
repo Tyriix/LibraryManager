@@ -1,8 +1,6 @@
 ﻿using LibraryManager.Domain.Services.BookServices;
 using LibraryManager.WPF.Commands.AddCommands;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
@@ -63,29 +61,6 @@ namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
             get { return _authorId; }
             set { _authorId = value; }
         }
-
-
-        //private string _genreName;
-        //public string GenreName
-        //{
-        //    get { return _genreName; }
-        //    set
-        //    {
-        //        _genreName = value;
-        //        OnPropertyChanged(nameof(GenreName));
-        //    }
-        //}
-        //private string _authorName;
-
-        //public string AuthorName
-        //{
-        //    get { return _authorName; }
-        //    set
-        //    {
-        //        _authorName = value;
-        //        OnPropertyChanged(nameof(AuthorName));
-        //    }
-        //}
 
         public ICommand AddBookCommand { get; set; }
         public AddBookViewModel(IBookService addBookService)
