@@ -34,5 +34,10 @@ namespace LibraryManager.Domain.Services.BookServices
             await _genreService.Update(genre.Id, genre);
             return newBook;
         }
+        public ICollection<Book> GetBooks()
+        {
+            ICollection<Book> books = _bookService.GetAll();
+            return books;
+        }
     }
 }

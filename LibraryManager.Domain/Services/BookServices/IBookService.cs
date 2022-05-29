@@ -8,6 +8,7 @@ namespace LibraryManager.Domain.Services.BookServices
 {
     public interface IBookService
     {
+        ICollection<Book> GetBooks();
         Task<Book> AddBook(Book book, Author author, Genre genre);
     }
 }

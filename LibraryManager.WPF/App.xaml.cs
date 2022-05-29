@@ -61,9 +61,10 @@ namespace LibraryManager.WPF
             services.AddSingleton<IDataService<Client>, GenericDataService<Client>>();
             services.AddSingleton<IDataService<Genre>, GenericDataService<Genre>>();
             services.AddSingleton<IDataService<Author>, GenericDataService<Author>>();
-
+            services.AddSingleton<IDataService<Book>, GenericDataService<Book>>();
             
             services.AddSingleton<IClientService, ClientService>();
+            services.AddSingleton<IBookService, BookService>();
             services.AddSingleton<IGenreService, GenreService>();
             services.AddSingleton<IAuthorService, AuthorService>();
             services.AddSingleton<IGenreService, GenreService>();
@@ -77,6 +78,7 @@ namespace LibraryManager.WPF
             services.AddSingleton<ILibraryManagerViewModelFactory<AddClientViewModel>, AddClientViewModelFactory>();
             services.AddSingleton<ILibraryManagerViewModelFactory<AddGenreViewModel>, AddGenreViewModelFactory>();
             services.AddSingleton<ILibraryManagerViewModelFactory<AddAuthorViewModel>, AddAuthorViewModelFactory>();
+            services.AddSingleton<ILibraryManagerViewModelFactory<AddBookViewModel>, AddBookViewModelFactory>();
 
             services.AddScoped<INavigator, Navigator>();
 
@@ -88,6 +90,7 @@ namespace LibraryManager.WPF
             services.AddScoped<AddClientViewModel>();
             services.AddScoped<AddGenreViewModel>();
             services.AddScoped<AddAuthorViewModel>();
+            services.AddScoped<AddBookViewModel>();
 
             services.AddScoped(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
             return services.BuildServiceProvider();

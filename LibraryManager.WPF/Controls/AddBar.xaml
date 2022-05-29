@@ -38,7 +38,7 @@
                      Margin="0,0,50,0"
                      Style="{StaticResource AddButtonTheme}"
                      Command="{Binding UpdateCurrentViewModelCommand}"
-                     CommandParameter="{x:Static nav:ViewType.AddClient}">
+                     CommandParameter="{x:Static nav:ViewType.AddBook}">
         </RadioButton>
         <RadioButton Background="Transparent"
                      Content="Add Author"

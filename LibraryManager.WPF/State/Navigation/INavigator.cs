@@ -11,7 +11,8 @@ namespace LibraryManager.WPF.State.Navigation
         Authors,
         AddClient,
         AddGenre,
-        AddAuthor
+        AddAuthor,
+        AddBook
     }
     public interface INavigator
     {
