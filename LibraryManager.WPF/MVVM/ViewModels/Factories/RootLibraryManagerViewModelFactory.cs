@@ -10,14 +10,16 @@ namespace LibraryManager.WPF.MVVM.ViewModels.Factories
         private readonly ILibraryManagerViewModelFactory<AddGenreViewModel> _addGenreViewModelFactory;
         private readonly ILibraryManagerViewModelFactory<ClientsViewModel> _clientsViewModelFactory;
         private readonly ILibraryManagerViewModelFactory<GenresViewModel> _genresViewModelFactory;
+        private readonly ILibraryManagerViewModelFactory<AuthorsViewModel> _authorsViewModelFactory;
 
-        public RootLibraryManagerViewModelFactory(ILibraryManagerViewModelFactory<HomeViewModel> homeViewModelFactory, ILibraryManagerViewModelFactory<AddClientViewModel> addClientViewModelFactory, ILibraryManagerViewModelFactory<AddGenreViewModel> addGenreViewModelFactory, ILibraryManagerViewModelFactory<ClientsViewModel> clientsViewModelFactory, ILibraryManagerViewModelFactory<GenresViewModel> genresViewModelFactory)
+        public RootLibraryManagerViewModelFactory(ILibraryManagerViewModelFactory<HomeViewModel> homeViewModelFactory, ILibraryManagerViewModelFactory<AddClientViewModel> addClientViewModelFactory, ILibraryManagerViewModelFactory<AddGenreViewModel> addGenreViewModelFactory, ILibraryManagerViewModelFactory<ClientsViewModel> clientsViewModelFactory, ILibraryManagerViewModelFactory<GenresViewModel> genresViewModelFactory, ILibraryManagerViewModelFactory<AuthorsViewModel> authorsViewModelFactory)
         {
             _homeViewModelFactory = homeViewModelFactory;
             _addClientViewModelFactory = addClientViewModelFactory;
             _addGenreViewModelFactory = addGenreViewModelFactory;
             _clientsViewModelFactory = clientsViewModelFactory;
             _genresViewModelFactory = genresViewModelFactory;
+            _authorsViewModelFactory = authorsViewModelFactory;
         }
 
         public ViewModelBase CreateViewModel(ViewType viewType)
@@ -29,6 +31,7 @@ namespace LibraryManager.WPF.MVVM.ViewModels.Factories
                 ViewType.AddGenre => _addGenreViewModelFactory.CreateViewModel(),
                 ViewType.Clients => _clientsViewModelFactory.CreateViewModel(),
                 ViewType.Genres => _genresViewModelFactory.CreateViewModel(),
+                ViewType.Authors => _authorsViewModelFactory.CreateViewModel(),
                 _ => throw new ArgumentException("This ViewType doesn't exist.", "viewType"),
             };
         }

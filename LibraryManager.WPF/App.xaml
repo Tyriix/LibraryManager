@@ -33,6 +33,9 @@
             <DataTemplate DataType="{x:Type viewModel:GenresViewModel}">
                 <view:GenresView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AuthorsViewModel}">
+                <view:AuthorsView/>
+            </DataTemplate>
             <!--<DataTemplate DataType="{x:Type viewModel:ClientsViewModel}">
                 <view:ClientsView/>
             </DataTemplate>-->

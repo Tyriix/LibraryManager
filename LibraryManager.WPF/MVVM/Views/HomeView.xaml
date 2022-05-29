@@ -31,7 +31,7 @@
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="{DynamicResource username}"
+                        <TextBlock Text="Placeholder"
                                    Foreground="White"
                                    FontSize="18"
                                    Margin="20,10,10,0"/>
