@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace LibraryManager.Domain.Models
 {
+    /// <summary>
+    /// This is a Book model.
+    /// </summary>
     public class Book : DomainObject
     {
         public string Title { get; set; }

@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="HeaderContainerTheme"
+           TargetType="{x:Type GridViewColumnHeader}">
+        <Setter Property="Background"
+                Value="#16151f" />
+        <Setter Property="Foreground"
+                Value="White" />
+        <Setter Property="BorderBrush"
+                Value="Transparent" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Style.Triggers>
+            <Trigger Property="Control.IsMouseOver"
+                     Value="True">
+                <Setter Property="Foreground"
+                        Value="Black" />
+            </Trigger>
+            <Trigger Property="IsEnabled"
+                     Value="True">
+                <Setter Property="Background"
+                        Value="Transparent" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

@@ -2,6 +2,9 @@
 
 namespace LibraryManager.Domain.Models
 {
+    /// <summary>
+    /// This is a Borrow model.
+    /// </summary>
     public class Borrow : DomainObject
     {
         public DateTime BorrowedDate { get; set; }

@@ -2,6 +2,9 @@
 
 namespace LibraryManager.Domain.Models
 {
+    /// <summary>
+    /// This is a Client model.
+    /// </summary>
     public class Client : DomainObject
     {
         public string FirstName { get; set; }

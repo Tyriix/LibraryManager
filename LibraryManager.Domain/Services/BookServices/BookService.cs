@@ -4,6 +4,10 @@ using System.Threading.Tasks;
 
 namespace LibraryManager.Domain.Services.BookServices
 {
+    /// <summary>
+    /// This is a service for managing Book data.
+    /// It's used to Add a Book or Return all Books.
+    /// </summary>
     public class BookService : IBookService
     {
         private readonly IDataService<Book> _bookService;
@@ -17,6 +21,9 @@ namespace LibraryManager.Domain.Services.BookServices
             _genreService = genreService;
         }
 
+        /// <summary>
+        /// This is a asynchronous function that creates a new Book.
+        /// </summary>
         public async Task<Book> AddBook(Book book, Author author, Genre genre)
         {
             Book newBook = new Book()
@@ -32,6 +39,12 @@ namespace LibraryManager.Domain.Services.BookServices
             await _genreService.Update(genre.Id, genre);
             return newBook;
         }
+        /// <summary>
+        /// This is a function that returns all Books.
+        /// </summary>
+        /// <returns>
+        /// Returns all Books in the database.
+        /// </returns>
         public ICollection<Book> GetBooks()
         {
             ICollection<Book> books = _bookService.GetAll();

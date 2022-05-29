@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
 {
+    /// <summary>
+    /// This is a viewModel class for AddBorrow View.
+    /// </summary>
     public class AddBorrowViewModel : ViewModelBase
     {
         private int _id;

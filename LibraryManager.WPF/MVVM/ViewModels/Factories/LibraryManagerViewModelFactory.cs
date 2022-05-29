@@ -5,6 +5,9 @@ using System;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.Factories
 {
+    /// <summary>
+    /// This is a factory class for managing different viewModels.
+    /// </summary>
     public class LibraryManagerViewModelFactory : ILibraryManagerViewModelFactory
     {
         private readonly CreateViewModel<HomeViewModel> _createHomeViewModel;
@@ -45,7 +48,9 @@ namespace LibraryManager.WPF.MVVM.ViewModels.Factories
             _createAddBookViewModel = createAddBookViewModel;
             _createAddBorrowViewModel = createAddBorrowViewModel;
         }
-
+        /// <summary>
+        /// This is a function that takes in a ViewType enum.
+        /// </summary>
         public ViewModelBase CreateViewModel(ViewType viewType)
         {
             return viewType switch

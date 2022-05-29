@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
 {
+    /// <summary>
+    /// This is a viewModel class for Genres View.
+    /// </summary>
     public class GenresViewModel : ViewModelBase
     {
         readonly IDataService<Genre> dataService = new GenericDataService<Genre>(new EntityFramework.LibraryManagerDbContextFactory());

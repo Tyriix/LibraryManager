@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace LibraryManager.EntityFramework.Services
 {
+    /// <summary>
+    /// This is a class for managing Generic data.
+    /// It's used to Create, Delete, Get by Id, GetAll and Update a Generic Object.
+    /// </summary>
     public class GenericDataService<T> : IDataService<T> where T : DomainObject
     {
         private readonly LibraryManagerDbContextFactory _contextFactory;

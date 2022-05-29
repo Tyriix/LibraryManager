@@ -10,6 +10,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.Commands.AddCommands
 {
+    /// <summary>
+    /// This is an ICommand for creating a new book.
+    /// </summary>
     public class AddBookCommand : ICommand
     {
         public event EventHandler CanExecuteChanged { add { } remove { } }

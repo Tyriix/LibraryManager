@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
 {
+    /// <summary>
+    /// This is a viewModel class for AddBook View.
+    /// </summary>
     public class AddBookViewModel : ViewModelBase
     {
         private int _id;

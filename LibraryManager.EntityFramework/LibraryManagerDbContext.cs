@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManager.EntityFramework
 {
+    /// <summary>
+    /// This is a class for setting Database Sets.
+    /// </summary>
     public class LibraryManagerDbContext : DbContext
     {
         public DbSet<Client> Clients { get; set; }

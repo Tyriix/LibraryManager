@@ -4,6 +4,10 @@ using System.Threading.Tasks;
 
 namespace LibraryManager.Domain.Services.BorrowServices
 {
+    /// <summary>
+    /// This is a service for managing Borrow data.
+    /// It's used to Add a Borrow or Return all Borrows.
+    /// </summary>
     public class BorrowService : IBorrowService
     {
         private readonly IDataService<Borrow> _borrowService;
@@ -17,6 +21,9 @@ namespace LibraryManager.Domain.Services.BorrowServices
             _bookService = bookService;
         }
 
+        /// <summary>
+        /// This is a asynchronous function that creates a new Book.
+        /// </summary>
         public async Task<Borrow> BorrowBook(Borrow borrow, Book book, Client client)
         {
             Borrow newBorrow = new Borrow()
@@ -31,7 +38,12 @@ namespace LibraryManager.Domain.Services.BorrowServices
             await _clientService.Update(client.Id, client);
             return newBorrow;
         }
-
+        /// <summary>
+        /// This is a function that returns all Borrows.
+        /// </summary>
+        /// <returns>
+        /// Returns all Borrows in the database.
+        /// </returns>
         public ICollection<Borrow> GetBorrows()
         {
             ICollection<Borrow> borrows = _borrowService.GetAll();

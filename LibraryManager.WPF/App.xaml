@@ -13,9 +13,10 @@
                 <ResourceDictionary Source="Style/Theme/ExitButtonTheme.xaml"/>
                 <ResourceDictionary Source="Style/Theme/TextBoxTheme.xaml"/>
                 <ResourceDictionary Source="Style/Theme/LoginButtonTheme.xaml"/>
-                <ResourceDictionary Source="Style/Theme/MinimizeButtonTheme.xaml"/>
-                <ResourceDictionary Source="Style/Theme/ListViewTheme.xaml"/>
+                <ResourceDictionary Source="Style/Theme/MinimizeButtonTheme.xaml" />
                 <ResourceDictionary Source="Style/Theme/AddButtonTheme.xaml" />
+                <ResourceDictionary Source="Style/Theme/ListViewItemContainerTheme.xaml" />
+                <ResourceDictionary Source="Style/Theme/HeaderContainerTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">

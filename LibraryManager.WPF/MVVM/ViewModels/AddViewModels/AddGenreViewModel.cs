@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
 {
+    /// <summary>
+    /// This is a viewModel class for AddGenre View.
+    /// </summary>
     public class AddGenreViewModel : ViewModelBase
     {
         private int _id;

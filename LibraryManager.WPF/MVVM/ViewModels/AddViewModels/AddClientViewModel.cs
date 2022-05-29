@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
 {
+    /// <summary>
+    /// This is a viewModel class for AddClient View.
+    /// </summary>
     public class AddClientViewModel : ViewModelBase
     {
         private int _id;

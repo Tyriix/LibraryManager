@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
 {
+    /// <summary>
+    /// This is a viewModel class for Borrows View.
+    /// </summary>
     public class BorrowsViewModel : ViewModelBase
     {
         readonly IDataService<Borrow> borrowDataService = new GenericDataService<Borrow>(new EntityFramework.LibraryManagerDbContextFactory());

@@ -6,6 +6,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.ViewModels
 {
+    /// <summary>
+    /// This is a viewModel class for Main View.
+    /// </summary>
     public class MainViewModel : ViewModelBase
     {
         private readonly ILibraryManagerViewModelFactory _rootLibraryManagerViewModelFactory;

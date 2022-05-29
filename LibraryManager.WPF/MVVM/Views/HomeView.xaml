@@ -31,10 +31,13 @@
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Placeholder"
+                        <TextBlock Text="This is an application for &#xA; managing library's data."
                                    Foreground="White"
                                    FontSize="18"
-                                   Margin="20,10,10,0"/>
+                                   Height="76"
+                                   Width="194"
+                                   HorizontalAlignment="Left"
+                                   Margin="25,65,0,0"/>
                     </StackPanel>
                     <Image Width="250"
                            Height="250"

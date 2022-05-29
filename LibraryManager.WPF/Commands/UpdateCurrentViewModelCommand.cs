@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.Commands
 {
+    /// <summary>
+    /// This is an ICommand for updating a viewModel.
+    /// </summary>
     public class UpdateCurrentViewModelCommand : ICommand
     {
         public event EventHandler CanExecuteChanged { add {} remove {} }
@@ -21,7 +24,9 @@ namespace LibraryManager.WPF.Commands
         {
             return true;
         }
-
+        /// <summary>
+        /// This is a function that takes in a ViewType enum parameter and passes it to CreateViewModel function.
+        /// </summary>
         public void Execute(object parameter)
         {
             if (parameter is ViewType viewType)

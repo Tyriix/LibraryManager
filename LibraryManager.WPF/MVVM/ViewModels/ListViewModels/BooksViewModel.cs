@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
 {
+    /// <summary>
+    /// This is a viewModel class for Books View.
+    /// </summary>
     public class BooksViewModel : ViewModelBase
     {
         readonly IDataService<Book> bookDataService = new GenericDataService<Book>(new EntityFramework.LibraryManagerDbContextFactory());

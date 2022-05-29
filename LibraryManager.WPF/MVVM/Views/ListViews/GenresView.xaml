@@ -14,12 +14,18 @@
     <Grid>
         <ListView Grid.Column="0"
                   HorizontalAlignment="Center"
-                  ItemsSource="{Binding Genres}">
+                  ItemsSource="{Binding Genres}"
+                  x:Name="bookList"
+                  Background="#FF22202F"
+                  BorderBrush="{x:Null}"
+                  Foreground="White"
+                  ItemContainerStyle="{StaticResource ListViewItemContainerTheme}">
             <ListView.View>
-                <GridView>
+                <GridView ColumnHeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                     <GridViewColumn Header="Id"
                                     x:Name="Id"
-                                    Width="30">
+                                    Width="30"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Id}"
@@ -27,9 +33,10 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Name"
+                    <GridViewColumn Header="Genre Name"
                                     x:Name="GenreName"
-                                    Width="100">
+                                    Width="100"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Name}"

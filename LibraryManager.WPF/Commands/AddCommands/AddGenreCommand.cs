@@ -7,6 +7,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.Commands.AddCommands
 {
+    /// <summary>
+    /// This is an ICommand for creating a new genre.
+    /// </summary>
     public class AddGenreCommand : ICommand
     {
         public event EventHandler CanExecuteChanged { add { } remove { } }

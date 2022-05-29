@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
 {
+    /// <summary>
+    /// This is a viewModel class for AddAuthor View.
+    /// </summary>
     public class AddAuthorViewModel : ViewModelBase
     {
         private int _id;

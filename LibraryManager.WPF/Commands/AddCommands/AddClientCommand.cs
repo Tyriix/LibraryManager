@@ -7,6 +7,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.Commands.AddCommands
 {
+    /// <summary>
+    /// This is an ICommand for creating a new client.
+    /// </summary>
     public class AddClientCommand : ICommand
     {
         public event EventHandler CanExecuteChanged { add { } remove { } }

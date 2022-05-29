@@ -9,6 +9,9 @@ using System.Windows.Input;
 namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
 {
 
+    /// <summary>
+    /// This is a viewModel class for Clients View.
+    /// </summary>
     public class ClientsViewModel : ViewModelBase
     {
         readonly IDataService<Client> dataService = new GenericDataService<Client>(new EntityFramework.LibraryManagerDbContextFactory());

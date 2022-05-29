@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
 {
+    /// <summary>
+    /// This is a viewModel class for Authors View.
+    /// </summary>
     public class AuthorsViewModel : ViewModelBase
     {
         readonly IDataService<Author> dataService = new GenericDataService<Author>(new EntityFramework.LibraryManagerDbContextFactory());

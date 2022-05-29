@@ -7,19 +7,27 @@
              xmlns:local1="clr-namespace:LibraryManager.WPF.MVVM.ViewModels.ListViewModels"
              mc:Ignorable="d"
              d:DesignHeight="450"
-             d:DesignWidth="800">
+             d:DesignWidth="800"
+             FontFamily="/Fonts/#Poppins">
     <UserControl.DataContext>
         <local1:BooksViewModel />
     </UserControl.DataContext>
     <Grid>
         <ListView Grid.Column="0"
                   HorizontalAlignment="Center"
-                  ItemsSource="{Binding Books}">
+                  ItemsSource="{Binding Books}"
+                  x:Name="bookList"
+                  Background="#FF22202F"
+                  BorderBrush="{x:Null}"
+                  Foreground="White"
+                  ItemContainerStyle="{StaticResource ListViewItemContainerTheme}">
             <ListView.View>
-                <GridView>
+                <GridView ColumnHeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                     <GridViewColumn Header="Id"
                                     x:Name="Id"
-                                    Width="30">
+                                    Width="30"
+                                    
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Id}"
@@ -29,7 +37,8 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Title"
                                     x:Name="Title"
-                                    Width="100">
+                                    Width="100"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Title}"
@@ -39,7 +48,8 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Page Count"
                                     x:Name="PageCount"
-                                    Width="100">
+                                    Width="100"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding PageCount}"
@@ -49,7 +59,8 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Publish Date"
                                     x:Name="PublishDate"
-                                    Width="100">
+                                    Width="100"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding PublishDate}"
@@ -59,7 +70,8 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Author Id"
                                     x:Name="AuthorId"
-                                    Width="60">
+                                    Width="60"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding AuthorId}"
@@ -69,7 +81,8 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Genre Id"
                                     x:Name="GenreId"
-                                    Width="60">
+                                    Width="60"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding GenreId}"

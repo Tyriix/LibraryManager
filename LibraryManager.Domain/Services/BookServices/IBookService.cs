@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace LibraryManager.Domain.Services.BookServices
 {
+    /// <summary>
+    /// This is an interface for managing Book data.
+    /// </summary>
     public interface IBookService
     {
         ICollection<Book> GetBooks();

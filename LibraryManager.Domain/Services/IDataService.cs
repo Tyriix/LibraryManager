@@ -3,6 +3,9 @@ using System.Threading.Tasks;
 
 namespace LibraryManager.Domain.Services
 {
+    // <summary>
+    // This is an interface for managing CRUD for all models.
+    // </summary>
     public interface IDataService<T>
     {
         ICollection<T> GetAll();

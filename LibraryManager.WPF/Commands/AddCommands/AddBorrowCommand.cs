@@ -10,6 +10,9 @@ using System.Windows.Input;
 
 namespace LibraryManager.WPF.Commands.AddCommands
 {
+    /// <summary>
+    /// This is an ICommand for creating a new borrow.
+    /// </summary>
     public class AddBorrowCommand : ICommand
     {
         public event EventHandler CanExecuteChanged { add { } remove { } }
@@ -43,9 +46,9 @@ namespace LibraryManager.WPF.Commands.AddCommands
 
                 MessageBox.Show($"Borrowed {book.Title} to {client.FirstName} {client.LastName}.");
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show("Try again");
             }
         }
     }
