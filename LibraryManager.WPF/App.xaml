@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="Style/Theme/LoginButtonTheme.xaml"/>
                 <ResourceDictionary Source="Style/Theme/MinimizeButtonTheme.xaml"/>
                 <ResourceDictionary Source="Style/Theme/ListViewTheme.xaml"/>
+                <ResourceDictionary Source="Style/Theme/AddButtonTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
                 <view:LoginView/>
@@ -22,6 +23,15 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:AddClientViewModel}">
                 <view:AddClientView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddGenreViewModel}">
+                <view:AddGenreView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ClientsViewModel}">
+                <view:ClientsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:GenresViewModel}">
+                <view:GenresView />
             </DataTemplate>
             <!--<DataTemplate DataType="{x:Type viewModel:ClientsViewModel}">
                 <view:ClientsView/>

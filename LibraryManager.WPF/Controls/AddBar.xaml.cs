@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace LibraryManager.WPF.Controls
 {
     /// <summary>
-    /// Logika interakcji dla klasy NavigationBar.xaml
+    /// Logika interakcji dla klasy AddBar.xaml
     /// </summary>
-    public partial class NavigationBar : UserControl
+    public partial class AddBar : UserControl
     {
-        public NavigationBar()
+        public AddBar()
         {
             InitializeComponent();
         }

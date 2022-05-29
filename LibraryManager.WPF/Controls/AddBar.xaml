@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="LibraryManager.WPF.Controls.AddBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:LibraryManager.WPF.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="600"
+             d:DesignWidth="920"
+             xmlns:nav="clr-namespace:LibraryManager.WPF.State.Navigation"
+             FontFamily="/Fonts/#Poppins">
+
+
+    <DockPanel VerticalAlignment="Top">
+        <RadioButton Content="Add Client"
+                     Background="Transparent"
+                     BorderThickness="0"
+                     HorizontalAlignment="Left"
+                     Margin="0,0,50,0"
+                     Style="{StaticResource AddButtonTheme}"
+                     Command="{Binding UpdateCurrentViewModelCommand}"
+                     CommandParameter="{x:Static nav:ViewType.AddClient}"
+                     >
+        </RadioButton>
+        <RadioButton Background="Transparent"
+                     Content="Borrow Book"
+                     BorderThickness="0"
+                     HorizontalAlignment="Left"
+                     Margin="0,0,50,0"
+                     Style="{StaticResource AddButtonTheme}"
+                     Command="{Binding UpdateCurrentViewModelCommand}"
+                     CommandParameter="{x:Static nav:ViewType.AddClient}">
+        </RadioButton>
+        <RadioButton Background="Transparent"
+                     Content="Add Book"
+                     BorderThickness="0"
+                     HorizontalAlignment="Left"
+                     Margin="0,0,50,0"
+                     Style="{StaticResource AddButtonTheme}"
+                     Command="{Binding UpdateCurrentViewModelCommand}"
+                     CommandParameter="{x:Static nav:ViewType.AddClient}">
+        </RadioButton>
+        <RadioButton Background="Transparent"
+                     Content="Add Author"
+                     BorderThickness="0"
+                     HorizontalAlignment="Left"
+                     Margin="0,0,50,0"
+                     Style="{StaticResource AddButtonTheme}"
+                     Command="{Binding UpdateCurrentViewModelCommand}"
+                     CommandParameter="{x:Static nav:ViewType.AddClient}">
+        </RadioButton>
+        <RadioButton Background="Transparent"
+                     Content="Add Genre"
+                     BorderThickness="0"
+                     HorizontalAlignment="Left"
+                     Style="{StaticResource AddButtonTheme}"
+                     Command="{Binding UpdateCurrentViewModelCommand}"
+                     CommandParameter="{x:Static nav:ViewType.AddGenre}">
+        </RadioButton>
+    </DockPanel>
+
+</UserControl>

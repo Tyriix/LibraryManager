@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LibraryManager.WPF.Controls
+namespace LibraryManager.WPF.MVVM.Views
 {
     /// <summary>
-    /// Logika interakcji dla klasy NavigationBar.xaml
+    /// Logika interakcji dla klasy GenresView.xaml
     /// </summary>
-    public partial class NavigationBar : UserControl
+    public partial class GenresView : UserControl
     {
-        public NavigationBar()
+        public GenresView()
         {
             InitializeComponent();
         }

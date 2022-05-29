@@ -1,5 +1,5 @@
-﻿using LibraryManager.Domain.Services;
-using LibraryManager.WPF.Commands;
+﻿using LibraryManager.Domain.Services.ClientServices;
+using LibraryManager.WPF.Commands.AddCommands;
 using System.Windows.Input;
 
 namespace LibraryManager.WPF.MVVM.ViewModels

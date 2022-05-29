@@ -1,5 +1,7 @@
 ﻿using LibraryManager.Domain.Models;
 using LibraryManager.Domain.Services;
+using LibraryManager.Domain.Services.ClientServices;
+using LibraryManager.Domain.Services.GenreServices;
 using LibraryManager.EntityFramework;
 using LibraryManager.EntityFramework.Services;
 using LibraryManager.WPF.MVVM.ViewModels;
@@ -19,6 +21,14 @@ namespace LibraryManager.WPF
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            //IDataService<Client> dataService = new GenericDataService<Client>(new EntityFramework.LibraryManagerDbContextFactory());
+            //IGetClientsService getClientsService = new GetClientsService(dataService);
+
+            //var clients = getClientsService.GetClients();
+            //foreach (var item in clients)
+            //{
+            //    MessageBox.Show(item.FirstName);
+            //}
             IServiceProvider serviceProvider = CreateServiceProvider();
             
             Window window = serviceProvider.GetRequiredService<MainWindow>();
@@ -32,15 +42,27 @@ namespace LibraryManager.WPF
 
             services.AddSingleton<LibraryManagerDbContextFactory>();
             services.AddSingleton<IDataService<Client>, GenericDataService<Client>>();
+            services.AddSingleton<IDataService<Genre>, GenericDataService<Genre>>();
+
             services.AddSingleton<IAddClientService, AddClientService>();
+            services.AddSingleton<IAddGenreService, AddGenreService>();
+            services.AddSingleton<IGetClientsService, GetClientsService>();
+            services.AddSingleton<IGenreService, GenreService>();
 
             services.AddSingleton<IRootLibraryManagerViewModelFactory, RootLibraryManagerViewModelFactory>();
             services.AddSingleton<ILibraryManagerViewModelFactory<HomeViewModel>, HomeViewModelFactory>();
             services.AddSingleton<ILibraryManagerViewModelFactory<AddClientViewModel>, AddClientViewModelFactory>();
+            services.AddSingleton<ILibraryManagerViewModelFactory<AddGenreViewModel>, AddGenreViewModelFactory>();
+            services.AddSingleton<ILibraryManagerViewModelFactory<ClientsViewModel>, ClientsViewModelFactory>();
+            services.AddSingleton<ILibraryManagerViewModelFactory<GenresViewModel>, GenresViewModelFactory>();
+
 
             services.AddScoped<INavigator, Navigator>();
             services.AddScoped<MainViewModel>();
             services.AddScoped<AddClientViewModel>();
+            services.AddScoped<AddGenreViewModel>();
+            services.AddScoped<ClientsViewModel>();
+            services.AddScoped<GenresViewModel>();
             services.AddScoped(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
             return services.BuildServiceProvider();
         }

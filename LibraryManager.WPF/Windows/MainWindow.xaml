@@ -13,6 +13,7 @@
         Background="Transparent"
         AllowsTransparency="True"
         FontFamily="/Fonts/#Poppins">
+
     <Border Background="#272537"
             CornerRadius="15">
         <Grid>
@@ -22,6 +23,7 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
+                <RowDefinition Height="370"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Text="Library Manager"
@@ -80,6 +82,11 @@
             <controls:NavigationBar Grid.Row="1"
                                     Grid.Column="0"
                                     DataContext="{Binding Navigator}"/>
+            <controls:AddBar Grid.Row="2"
+                             Grid.Column="1"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             DataContext="{Binding Navigator}"/>
             <TextBox Width="250"
                      Height="40"
                      VerticalContentAlignment="Center"

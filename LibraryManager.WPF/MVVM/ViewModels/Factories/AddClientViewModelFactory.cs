@@ -1,4 +1,4 @@
-﻿using LibraryManager.Domain.Services;
+﻿using LibraryManager.Domain.Services.ClientServices;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.Factories
 {

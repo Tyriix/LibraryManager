@@ -43,10 +43,16 @@ namespace LibraryManager.EntityFramework.Services
             return entity;
         }
 
-        public async Task<ICollection<T>> GetAll()
+        public  ICollection<T> GetAll()
         {
             using LibraryManagerDbContext context = _contextFactory.CreateDbContext();
-            ICollection<T> entities = await context.Set<T>().ToListAsync();
+
+            List<T> entities = new List<T>();
+            foreach (var item in context.Set<T>())
+            {
+                entities.Add(item);
+            }
+            
 
             return entities;
         }

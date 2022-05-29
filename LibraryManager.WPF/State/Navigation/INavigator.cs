@@ -6,7 +6,10 @@ namespace LibraryManager.WPF.State.Navigation
     public enum ViewType 
     {
         Home,
-        AddClient
+        Clients,
+        Genres,
+        AddClient,
+        AddGenre
     }
     public interface INavigator
     {

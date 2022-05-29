@@ -5,7 +5,7 @@ namespace LibraryManager.Domain.Services
 {
     public interface IDataService<T>
     {
-        Task<ICollection<T>> GetAll();
+        ICollection<T> GetAll();
         Task<T> Get(int id);
         Task<T> Create(T entity);
         Task<T> Update(int id,T entity);

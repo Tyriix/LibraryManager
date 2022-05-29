@@ -1,7 +1,7 @@
 ﻿using LibraryManager.Domain.Models;
 using System.Threading.Tasks;
 
-namespace LibraryManager.Domain.Services
+namespace LibraryManager.Domain.Services.ClientServices
 {
     public class AddClientService : IAddClientService
     {

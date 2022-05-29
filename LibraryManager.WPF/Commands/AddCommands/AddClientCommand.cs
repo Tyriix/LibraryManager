@@ -1,11 +1,11 @@
 ﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services;
+using LibraryManager.Domain.Services.ClientServices;
 using LibraryManager.WPF.MVVM.ViewModels;
 using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace LibraryManager.WPF.Commands
+namespace LibraryManager.WPF.Commands.AddCommands
 {
     public class AddClientCommand : ICommand
     {

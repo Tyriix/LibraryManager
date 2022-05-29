@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManager.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -11,14 +12,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LibraryManager.WPF.Controls
+namespace LibraryManager.WPF.MVVM.Views
 {
     /// <summary>
-    /// Logika interakcji dla klasy NavigationBar.xaml
+    /// Logika interakcji dla klasy ClientsView.xaml
     /// </summary>
-    public partial class NavigationBar : UserControl
+    public partial class ClientsView : UserControl
     {
-        public NavigationBar()
+        public ClientsView()
         {
             InitializeComponent();
         }
