@@ -53,20 +53,6 @@ namespace LibraryManager.EntityFramework.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Librarians",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Librarians", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Books",
                 columns: table => new
                 {
@@ -104,8 +90,7 @@ namespace LibraryManager.EntityFramework.Migrations
                     BorrowedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ReturnedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BookId = table.Column<int>(type: "int", nullable: true),
-                    ClientId = table.Column<int>(type: "int", nullable: true),
-                    LibrarianId = table.Column<int>(type: "int", nullable: true)
+                    ClientId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -120,12 +105,6 @@ namespace LibraryManager.EntityFramework.Migrations
                         name: "FK_Borrows_Clients_ClientId",
                         column: x => x.ClientId,
                         principalTable: "Clients",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Borrows_Librarians_LibrarianId",
-                        column: x => x.LibrarianId,
-                        principalTable: "Librarians",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -149,11 +128,6 @@ namespace LibraryManager.EntityFramework.Migrations
                 name: "IX_Borrows_ClientId",
                 table: "Borrows",
                 column: "ClientId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Borrows_LibrarianId",
-                table: "Borrows",
-                column: "LibrarianId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -166,9 +140,6 @@ namespace LibraryManager.EntityFramework.Migrations
 
             migrationBuilder.DropTable(
                 name: "Clients");
-
-            migrationBuilder.DropTable(
-                name: "Librarians");
 
             migrationBuilder.DropTable(
                 name: "Authors");

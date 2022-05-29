@@ -7,7 +7,6 @@ namespace LibraryManager.EntityFramework
     {
         public DbSet<Client> Clients { get; set; }
         public DbSet<Borrow> Borrows { get; set; }
-        public DbSet<Librarian> Librarians { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Author> Authors { get; set; }
@@ -21,7 +20,6 @@ namespace LibraryManager.EntityFramework
             modelBuilder.Entity<Book>().HasMany(c => c.Borrow).WithOne(b => b.Book);
 
             modelBuilder.Entity<Client>().HasMany(c => c.Borrows).WithOne(b => b.Client).OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Librarian>().HasMany(c => c.Borrows).WithOne(b => b.Librarian).OnDelete(DeleteBehavior.Cascade);
             
 
             base.OnModelCreating(modelBuilder);

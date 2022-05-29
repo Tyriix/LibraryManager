@@ -9,6 +9,5 @@ namespace LibraryManager.Domain.Models
 
         public Book Book { get; set; }
         public Client Client { get; set; }
-        public Librarian Librarian { get; set; }
     }
 }

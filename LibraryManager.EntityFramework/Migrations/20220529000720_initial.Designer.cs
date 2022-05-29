@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryManager.EntityFramework.Migrations
 {
     [DbContext(typeof(LibraryManagerDbContext))]
-    [Migration("20220526191622_initial")]
+    [Migration("20220529000720_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,9 +86,6 @@ namespace LibraryManager.EntityFramework.Migrations
                     b.Property<int?>("ClientId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("LibrarianId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ReturnedDate")
                         .HasColumnType("datetime2");
 
@@ -97,8 +94,6 @@ namespace LibraryManager.EntityFramework.Migrations
                     b.HasIndex("BookId");
 
                     b.HasIndex("ClientId");
-
-                    b.HasIndex("LibrarianId");
 
                     b.ToTable("Borrows");
                 });
@@ -148,24 +143,6 @@ namespace LibraryManager.EntityFramework.Migrations
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("LibraryManager.Domain.Models.Librarian", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Librarians");
-                });
-
             modelBuilder.Entity("LibraryManager.Domain.Models.Book", b =>
                 {
                     b.HasOne("LibraryManager.Domain.Models.Author", "Author")
@@ -194,16 +171,9 @@ namespace LibraryManager.EntityFramework.Migrations
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("LibraryManager.Domain.Models.Librarian", "Librarian")
-                        .WithMany("Borrows")
-                        .HasForeignKey("LibrarianId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.Navigation("Book");
 
                     b.Navigation("Client");
-
-                    b.Navigation("Librarian");
                 });
 
             modelBuilder.Entity("LibraryManager.Domain.Models.Author", b =>
@@ -224,11 +194,6 @@ namespace LibraryManager.EntityFramework.Migrations
             modelBuilder.Entity("LibraryManager.Domain.Models.Genre", b =>
                 {
                     b.Navigation("Books");
-                });
-
-            modelBuilder.Entity("LibraryManager.Domain.Models.Librarian", b =>
-                {
-                    b.Navigation("Borrows");
                 });
 #pragma warning restore 612, 618
         }
