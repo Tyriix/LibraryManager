@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryManager.Domain.Services.GenreServices
+namespace LibraryManager.Domain.Services.BookServices
 {
-    public interface IAddGenreService
+    public interface IBookService
     {
-        Task<Genre> AddGenre(Genre genre);
+        Task<Book> AddBook(Book book);
     }
 }

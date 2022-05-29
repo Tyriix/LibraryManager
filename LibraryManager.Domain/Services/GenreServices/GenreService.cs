@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LibraryManager.Domain.Services.GenreServices
 {
@@ -12,6 +13,15 @@ namespace LibraryManager.Domain.Services.GenreServices
         public GenreService(IDataService<Genre> genreService)
         {
             _genreService = genreService;
+        }
+        public async Task<Genre> AddGenre(Genre genre)
+        {
+            Genre newGenre = new Genre()
+            {
+                Name = genre.Name
+            };
+            await _genreService.Create(newGenre);
+            return newGenre;
         }
 
         public ICollection<Genre> GetGenres()

@@ -2,7 +2,7 @@
 using LibraryManager.WPF.Commands.AddCommands;
 using System.Windows.Input;
 
-namespace LibraryManager.WPF.MVVM.ViewModels
+namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
 {
     public class AddGenreViewModel : ViewModelBase
     {
@@ -26,7 +26,7 @@ namespace LibraryManager.WPF.MVVM.ViewModels
         }
 
         public ICommand AddGenreCommand { get; set; }
-        public AddGenreViewModel(IAddGenreService addGenreService)
+        public AddGenreViewModel(IGenreService addGenreService)
         {
             AddGenreCommand = new AddGenreCommand(this, addGenreService);
         }

@@ -23,7 +23,7 @@ namespace LibraryManager.WPF.MVVM.ViewModels
 
         public ClientsViewModel()
         {
-            IGetClientsService getClientsService = new GetClientsService(dataService);
+            IClientService getClientsService = new ClientService(dataService);
             var clients = getClientsService.GetClients();
 
             _clients = new ObservableCollection<Client>(clients);

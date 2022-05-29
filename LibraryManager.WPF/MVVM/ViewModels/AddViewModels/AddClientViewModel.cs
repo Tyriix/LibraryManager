@@ -2,7 +2,7 @@
 using LibraryManager.WPF.Commands.AddCommands;
 using System.Windows.Input;
 
-namespace LibraryManager.WPF.MVVM.ViewModels
+namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
 {
     public class AddClientViewModel : ViewModelBase
     {
@@ -69,7 +69,7 @@ namespace LibraryManager.WPF.MVVM.ViewModels
                 OnPropertyChanged(nameof(Phone));
             }
         }
-        private string _email;  
+        private string _email;
 
         public string Email
         {
@@ -81,7 +81,7 @@ namespace LibraryManager.WPF.MVVM.ViewModels
             }
         }
         public ICommand AddClientCommand { get; set; }
-        public AddClientViewModel(IAddClientService addClientService)
+        public AddClientViewModel(IClientService addClientService)
         {
             AddClientCommand = new AddClientCommand(this, addClientService);
         }

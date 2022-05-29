@@ -1,6 +1,6 @@
 ﻿using LibraryManager.Domain.Models;
 using LibraryManager.Domain.Services.AuthorServices;
-using LibraryManager.WPF.MVVM.ViewModels;
+using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;

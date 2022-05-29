@@ -1,12 +1,13 @@
 ﻿using LibraryManager.Domain.Services.ClientServices;
+using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
 
 namespace LibraryManager.WPF.MVVM.ViewModels.Factories
 {
     public class AddClientViewModelFactory : ILibraryManagerViewModelFactory<AddClientViewModel>
     {
-        private IAddClientService AddClientService { get; set; }
+        private IClientService AddClientService { get; set; }
 
-        public AddClientViewModelFactory(IAddClientService addClientService)
+        public AddClientViewModelFactory(IClientService addClientService)
         {
             AddClientService = addClientService;
         }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 
-namespace LibraryManager.WPF.MVVM.ViewModels
+namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
 {
     public class AddAuthorViewModel : ViewModelBase
     {

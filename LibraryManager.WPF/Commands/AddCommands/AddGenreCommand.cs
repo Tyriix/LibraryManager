@@ -1,6 +1,6 @@
 ﻿using LibraryManager.Domain.Models;
 using LibraryManager.Domain.Services.GenreServices;
-using LibraryManager.WPF.MVVM.ViewModels;
+using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
 using System;
 using System.Windows;
 using System.Windows.Input;
@@ -11,9 +11,9 @@ namespace LibraryManager.WPF.Commands.AddCommands
     {
         public event EventHandler CanExecuteChanged { add { } remove { } }
         private readonly AddGenreViewModel _addViewModel;
-        private readonly IAddGenreService _addGenreService;
+        private readonly IGenreService _addGenreService;
 
-        public AddGenreCommand(AddGenreViewModel addViewModel, IAddGenreService addGenreService)
+        public AddGenreCommand(AddGenreViewModel addViewModel, IGenreService addGenreService)
         {
             _addViewModel = addViewModel;
             _addGenreService = addGenreService;

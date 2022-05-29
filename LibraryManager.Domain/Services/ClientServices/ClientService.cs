@@ -1,17 +1,19 @@
 ﻿using LibraryManager.Domain.Models;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace LibraryManager.Domain.Services.ClientServices
 {
-    public class AddClientService : IAddClientService
+    public class ClientService : IClientService
     {
         private readonly IDataService<Client> _clientService;
 
-        public AddClientService(IDataService<Client> clientService)
+        public ClientService(IDataService<Client> clientService)
         {
             _clientService = clientService;
         }
-
         public async Task<Client> AddClient(Client client)
         {
             Client newClient = new Client()
@@ -26,5 +28,11 @@ namespace LibraryManager.Domain.Services.ClientServices
             await _clientService.Create(newClient);
             return newClient;
         }
+        public ICollection<Client> GetClients()
+        {
+            ICollection<Client> clients = _clientService.GetAll();
+            return clients;
+        }
+        
     }
 }

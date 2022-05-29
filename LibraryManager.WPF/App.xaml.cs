@@ -6,6 +6,7 @@ using LibraryManager.Domain.Services.GenreServices;
 using LibraryManager.EntityFramework;
 using LibraryManager.EntityFramework.Services;
 using LibraryManager.WPF.MVVM.ViewModels;
+using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
 using LibraryManager.WPF.MVVM.ViewModels.Factories;
 using LibraryManager.WPF.State.Navigation;
 using LibraryManager.WPF.ViewModels;
@@ -47,12 +48,10 @@ namespace LibraryManager.WPF
             services.AddSingleton<IDataService<Author>, GenericDataService<Author>>();
 
             
-            services.AddSingleton<IGetClientsService, GetClientsService>();
+            services.AddSingleton<IClientService, ClientService>();
             services.AddSingleton<IGenreService, GenreService>();
             services.AddSingleton<IAuthorService, AuthorService>();
-
-            services.AddSingleton<IAddClientService, AddClientService>();
-            services.AddSingleton<IAddGenreService, AddGenreService>();
+            services.AddSingleton<IGenreService, GenreService>();
 
             services.AddSingleton<IRootLibraryManagerViewModelFactory, RootLibraryManagerViewModelFactory>();
             services.AddSingleton<ILibraryManagerViewModelFactory<HomeViewModel>, HomeViewModelFactory>();

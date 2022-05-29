@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LibraryManager.WPF"
              xmlns:viewModel="clr-namespace:LibraryManager.WPF.MVVM.ViewModels"
+             xmlns:addViewModel="clr-namespace:LibraryManager.WPF.MVVM.ViewModels.AddViewModels"
              xmlns:view="clr-namespace:LibraryManager.WPF.MVVM.Views">
     <Application.Resources>
         <ResourceDictionary>
@@ -15,6 +16,7 @@
                 <ResourceDictionary Source="Style/Theme/ListViewTheme.xaml"/>
                 <ResourceDictionary Source="Style/Theme/AddButtonTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            
             <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
                 <view:LoginView/>
             </DataTemplate>
@@ -30,18 +32,15 @@
             <DataTemplate DataType="{x:Type viewModel:AuthorsViewModel}">
                 <view:AuthorsView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AddClientViewModel}">
+            <DataTemplate DataType="{x:Type addViewModel:AddClientViewModel}">
                 <view:AddClientView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AddGenreViewModel}">
+            <DataTemplate DataType="{x:Type addViewModel:AddGenreViewModel}">
                 <view:AddGenreView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AddAuthorViewModel}">
+            <DataTemplate DataType="{x:Type addViewModel:AddAuthorViewModel}">
                 <view:AddAuthorView />
             </DataTemplate>
-            <!--<DataTemplate DataType="{x:Type viewModel:ClientsViewModel}">
-                <view:ClientsView/>
-            </DataTemplate>-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

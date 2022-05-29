@@ -1,6 +1,6 @@
 ﻿using LibraryManager.Domain.Models;
 using LibraryManager.Domain.Services.ClientServices;
-using LibraryManager.WPF.MVVM.ViewModels;
+using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
 using System;
 using System.Windows;
 using System.Windows.Input;
@@ -11,9 +11,9 @@ namespace LibraryManager.WPF.Commands.AddCommands
     {
         public event EventHandler CanExecuteChanged { add { } remove { } }
         private readonly AddClientViewModel _addViewModel;
-        private readonly IAddClientService _addClientService;
+        private readonly IClientService _addClientService;
 
-        public AddClientCommand(AddClientViewModel viewModel, IAddClientService addClientService)
+        public AddClientCommand(AddClientViewModel viewModel, IClientService addClientService)
         {
             _addViewModel = viewModel;
             _addClientService = addClientService;
