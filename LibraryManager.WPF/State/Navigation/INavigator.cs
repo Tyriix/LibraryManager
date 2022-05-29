@@ -20,6 +20,6 @@ namespace LibraryManager.WPF.State.Navigation
     public interface INavigator
     {
         ViewModelBase CurrentViewModel { get; set; }
-        ICommand UpdateCurrentViewModelCommand { get; }
+        
     }
 }

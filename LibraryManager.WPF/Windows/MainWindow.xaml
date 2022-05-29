@@ -80,13 +80,11 @@
                 
             </StackPanel>
             <controls:NavigationBar Grid.Row="1"
-                                    Grid.Column="0"
-                                    DataContext="{Binding Navigator}"/>
+                                    Grid.Column="0"/>
             <controls:AddBar Grid.Row="2"
                              Grid.Column="1"
                              VerticalAlignment="Center"
-                             HorizontalAlignment="Center"
-                             DataContext="{Binding Navigator}"/>
+                             HorizontalAlignment="Center"/>
             <!--<TextBox Width="250"
                      Height="40"
                      VerticalContentAlignment="Center"
