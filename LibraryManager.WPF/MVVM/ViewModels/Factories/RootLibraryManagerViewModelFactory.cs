@@ -11,6 +11,8 @@ namespace LibraryManager.WPF.MVVM.ViewModels.Factories
         private readonly ILibraryManagerViewModelFactory<GenresViewModel> _genresViewModelFactory;
         private readonly ILibraryManagerViewModelFactory<AuthorsViewModel> _authorsViewModelFactory;
         private readonly ILibraryManagerViewModelFactory<BooksViewModel> _booksViewModelFactory;
+        private readonly ILibraryManagerViewModelFactory<BorrowsViewModel> _borrowsViewModelFactory;
+
 
         private readonly ILibraryManagerViewModelFactory<AddClientViewModel> _addClientViewModelFactory;
         private readonly ILibraryManagerViewModelFactory<AddGenreViewModel> _addGenreViewModelFactory;
@@ -18,13 +20,14 @@ namespace LibraryManager.WPF.MVVM.ViewModels.Factories
         private readonly ILibraryManagerViewModelFactory<AddBookViewModel> _addBookViewModelFactory;
         private readonly ILibraryManagerViewModelFactory<AddBorrowViewModel> _addBorrowViewModelFactory;
 
-        public RootLibraryManagerViewModelFactory(ILibraryManagerViewModelFactory<HomeViewModel> homeViewModelFactory, ILibraryManagerViewModelFactory<ClientsViewModel> clientsViewModelFactory, ILibraryManagerViewModelFactory<GenresViewModel> genresViewModelFactory, ILibraryManagerViewModelFactory<AuthorsViewModel> authorsViewModelFactory, ILibraryManagerViewModelFactory<BooksViewModel> booksViewModelFactory, ILibraryManagerViewModelFactory<AddClientViewModel> addClientViewModelFactory, ILibraryManagerViewModelFactory<AddGenreViewModel> addGenreViewModelFactory, ILibraryManagerViewModelFactory<AddAuthorViewModel> addAuthorViewModelFactory, ILibraryManagerViewModelFactory<AddBookViewModel> addBookViewModelFactory, ILibraryManagerViewModelFactory<AddBorrowViewModel> addBorrowViewModelFactory)
+        public RootLibraryManagerViewModelFactory(ILibraryManagerViewModelFactory<HomeViewModel> homeViewModelFactory, ILibraryManagerViewModelFactory<ClientsViewModel> clientsViewModelFactory, ILibraryManagerViewModelFactory<GenresViewModel> genresViewModelFactory, ILibraryManagerViewModelFactory<AuthorsViewModel> authorsViewModelFactory, ILibraryManagerViewModelFactory<BooksViewModel> booksViewModelFactory, ILibraryManagerViewModelFactory<BorrowsViewModel> borrowsViewModelFactory, ILibraryManagerViewModelFactory<AddClientViewModel> addClientViewModelFactory, ILibraryManagerViewModelFactory<AddGenreViewModel> addGenreViewModelFactory, ILibraryManagerViewModelFactory<AddAuthorViewModel> addAuthorViewModelFactory, ILibraryManagerViewModelFactory<AddBookViewModel> addBookViewModelFactory, ILibraryManagerViewModelFactory<AddBorrowViewModel> addBorrowViewModelFactory)
         {
             _homeViewModelFactory = homeViewModelFactory;
             _clientsViewModelFactory = clientsViewModelFactory;
             _genresViewModelFactory = genresViewModelFactory;
             _authorsViewModelFactory = authorsViewModelFactory;
             _booksViewModelFactory = booksViewModelFactory;
+            _borrowsViewModelFactory = borrowsViewModelFactory;
             _addClientViewModelFactory = addClientViewModelFactory;
             _addGenreViewModelFactory = addGenreViewModelFactory;
             _addAuthorViewModelFactory = addAuthorViewModelFactory;
@@ -38,6 +41,7 @@ namespace LibraryManager.WPF.MVVM.ViewModels.Factories
             {
                 ViewType.Home => _homeViewModelFactory.CreateViewModel(),
                 ViewType.Clients => _clientsViewModelFactory.CreateViewModel(),
+                ViewType.Borrows => _borrowsViewModelFactory.CreateViewModel(),
                 ViewType.Genres => _genresViewModelFactory.CreateViewModel(),
                 ViewType.Authors => _authorsViewModelFactory.CreateViewModel(),
                 ViewType.Books => _booksViewModelFactory.CreateViewModel(),

@@ -35,11 +35,13 @@
                          Style="{StaticResource MenuButtonTheme}"
                          Command="{Binding UpdateCurrentViewModelCommand}"
                          CommandParameter="{x:Static nav:ViewType.Clients}" />
-            <RadioButton Content="Borrowed"
+            <RadioButton Content="Borrows"
                          Height="50"
                          Foreground="White"
                          FontSize="14"
-                         Style="{StaticResource MenuButtonTheme}" />
+                         Style="{StaticResource MenuButtonTheme}"
+                         Command="{Binding UpdateCurrentViewModelCommand}"
+                         CommandParameter="{x:Static nav:ViewType.Borrows}"/>
             <RadioButton Content="Books"
                          Height="50"
                          Foreground="White"

@@ -34,7 +34,7 @@ namespace LibraryManager.Domain.Services.BorrowServices
             return newBorrow;
         }
 
-        public ICollection<Borrow> GetBooks()
+        public ICollection<Borrow> GetBorrows()
         {
             ICollection<Borrow> borrows = _borrowService.GetAll();
             return borrows;

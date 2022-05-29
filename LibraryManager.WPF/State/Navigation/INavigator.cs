@@ -7,6 +7,7 @@ namespace LibraryManager.WPF.State.Navigation
     {
         Home,
         Clients,
+        Borrows,
         Genres,
         Books,
         Authors,
