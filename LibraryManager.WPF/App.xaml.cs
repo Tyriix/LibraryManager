@@ -74,6 +74,7 @@ namespace LibraryManager.WPF
             services.AddSingleton<ILibraryManagerViewModelFactory<ClientsViewModel>, ClientsViewModelFactory>();
             services.AddSingleton<ILibraryManagerViewModelFactory<GenresViewModel>, GenresViewModelFactory>();
             services.AddSingleton<ILibraryManagerViewModelFactory<AuthorsViewModel>, AuthorsViewModelFactory>();
+            services.AddSingleton<ILibraryManagerViewModelFactory<BooksViewModel>, BooksViewModelFactory>();
 
             services.AddSingleton<ILibraryManagerViewModelFactory<AddClientViewModel>, AddClientViewModelFactory>();
             services.AddSingleton<ILibraryManagerViewModelFactory<AddGenreViewModel>, AddGenreViewModelFactory>();
@@ -86,6 +87,7 @@ namespace LibraryManager.WPF
             services.AddScoped<ClientsViewModel>();
             services.AddScoped<GenresViewModel>();
             services.AddScoped<AuthorsViewModel>();
+            services.AddScoped<BooksViewModel>();
 
             services.AddScoped<AddClientViewModel>();
             services.AddScoped<AddGenreViewModel>();

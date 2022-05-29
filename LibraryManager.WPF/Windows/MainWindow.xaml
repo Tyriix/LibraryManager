@@ -87,13 +87,13 @@
                              VerticalAlignment="Center"
                              HorizontalAlignment="Center"
                              DataContext="{Binding Navigator}"/>
-            <TextBox Width="250"
+            <!--<TextBox Width="250"
                      Height="40"
                      VerticalContentAlignment="Center"
                      HorizontalAlignment="Left"
                      Margin="5"
                      Grid.Column="1"
-                     Style="{StaticResource ModernTextBox}"/>
+                     Style="{StaticResource ModernTextBox}"/>-->
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
                             Margin="10"

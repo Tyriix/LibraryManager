@@ -8,6 +8,7 @@ namespace LibraryManager.WPF.State.Navigation
         Home,
         Clients,
         Genres,
+        Books,
         Authors,
         AddClient,
         AddGenre,
