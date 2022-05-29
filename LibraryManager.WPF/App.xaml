@@ -47,6 +47,9 @@
             <DataTemplate DataType="{x:Type addViewModel:AddBookViewModel}">
                 <view:AddBookView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type addViewModel:AddBorrowViewModel}">
+                <view:AddBorrowView />
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
