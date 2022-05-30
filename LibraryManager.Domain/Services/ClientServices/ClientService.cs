@@ -34,11 +34,25 @@ namespace LibraryManager.Domain.Services.ClientServices
                 Email = client.Email
             };
 
-            if (newClient.FirstName.Any(ch => !Char.IsLetterOrDigit(ch)) == true
-                || newClient.LastName.Any(ch => !Char.IsLetterOrDigit(ch)) == true
-                || newClient.City.Any(ch => !Char.IsLetterOrDigit(ch)) == true)
+            if (newClient.FirstName.Any(ch => !char.IsLetter(ch)) == true
+                || newClient.LastName.Any(ch => !char.IsLetter(ch)) == true
+                || newClient.City.Any(ch => !char.IsLetter(ch)) == true)
             {
                 MessageBox.Show("First name, last name or city can't contain numbers or special signs, try again.");
+                return newClient;
+            }
+
+            if (newClient.Phone.Any(ch => char.IsLetter(ch)) == true
+                || newClient.Phone.Any(ch => char.IsSymbol(ch)) == true
+                || newClient.Phone.Any(ch => char.IsPunctuation(ch)) == true)
+            {
+                MessageBox.Show("Phone number can't contain letters or special signs, try again.");
+                return newClient;
+            }
+
+            if (newClient.Phone.Length != 9)
+            {
+                MessageBox.Show("Phone number must be 9 digits long.");
                 return newClient;
             }
 

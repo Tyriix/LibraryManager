@@ -44,7 +44,7 @@ namespace LibraryManager.Domain.Services.BookServices
         /// This is a function that returns all Books.
         /// </summary>
         /// <returns>
-        /// Returns all Books in the database.
+        /// Returns collection of Books in the database.
         /// </returns>
         public ICollection<Book> GetBooks()
         {

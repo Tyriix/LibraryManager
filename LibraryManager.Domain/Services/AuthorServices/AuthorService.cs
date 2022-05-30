@@ -31,8 +31,8 @@ namespace LibraryManager.Domain.Services.AuthorServices
                 LastName = author.LastName,
             };
 
-            if (newAuthor.FirstName.Any(ch => !Char.IsLetterOrDigit(ch)) == true
-                || newAuthor.LastName.Any(ch => !Char.IsLetterOrDigit(ch)) == true)
+            if (newAuthor.FirstName.Any(ch => !char.IsLetter(ch)) == true
+                || newAuthor.LastName.Any(ch => !char.IsLetter(ch)) == true)
             {
                 MessageBox.Show("First name or last name can't contain numbers or special signs, try again.");
                 return newAuthor;

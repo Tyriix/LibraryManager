@@ -1,5 +1,6 @@
 ﻿using LibraryManager.Domain.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -26,6 +27,11 @@ namespace LibraryManager.Domain.Services.GenreServices
             {
                 Name = genre.Name
             };
+            if (newGenre.Name.Any(char.IsDigit) == true)
+            {
+                MessageBox.Show("Genre name can't contain numbers, try again.");
+                return newGenre;
+            }
             var allGenres = _genreService.GetAll();
             foreach (var item in allGenres)
             {

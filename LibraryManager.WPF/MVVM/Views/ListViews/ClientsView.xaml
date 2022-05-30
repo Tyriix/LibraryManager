@@ -79,7 +79,7 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Phone"
                                     x:Name="Phone"
-                                    Width="60"
+                                    Width="75"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
