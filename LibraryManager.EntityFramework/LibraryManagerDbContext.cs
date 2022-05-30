@@ -18,6 +18,12 @@ namespace LibraryManager.EntityFramework
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Book>().Property(b => b.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Client>().Property(c => c.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Borrow>().Property(b => b.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Genre>().Property(g => g.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Author>().Property(a => a.Id).ValueGeneratedOnAdd();
+
             base.OnModelCreating(modelBuilder);
         }
     }

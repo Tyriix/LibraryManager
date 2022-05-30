@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibraryManager.Domain.Models
 {
@@ -7,6 +8,7 @@ namespace LibraryManager.Domain.Models
     /// </summary>
     public class Genre : DomainObject
     {
+        [Column(TypeName = "nvarchar(20)")]
         public string Name { get; set; }
 
         public ICollection<Book> Books { get; set; }

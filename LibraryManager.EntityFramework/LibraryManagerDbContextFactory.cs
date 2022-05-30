@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using System;
 
 namespace LibraryManager.EntityFramework
 {
@@ -10,8 +11,10 @@ namespace LibraryManager.EntityFramework
     {
         public LibraryManagerDbContext CreateDbContext(string[] args = null)
         {
+            string dbPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            
             var options = new DbContextOptionsBuilder<LibraryManagerDbContext>();
-            options.UseSqlServer("Server=.\\SQLEXPRESS;Database=LibraryManagerDb;Trusted_Connection=True");
+            options.UseSqlite($"Data Source=/{dbPath}/LMDatabase.db");
 
             return new LibraryManagerDbContext(options.Options);
         }
