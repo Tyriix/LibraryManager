@@ -27,9 +27,11 @@ namespace LibraryManager.Domain.Services.GenreServices
             {
                 Name = genre.Name
             };
-            if (newGenre.Name.Any(char.IsDigit) == true)
+            if (newGenre.Name.Any(char.IsDigit) == true
+                || newGenre.Name.Any(ch => char.IsSymbol(ch)) == true
+                || newGenre.Name.Any(ch => char.IsPunctuation(ch)) == true)
             {
-                MessageBox.Show("Genre name can't contain numbers, try again.");
+                MessageBox.Show("Genre name can't contain numbers or symbols, try again.");
                 return newGenre;
             }
             var allGenres = _genreService.GetAll();
