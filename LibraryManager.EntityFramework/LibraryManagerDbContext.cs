@@ -14,7 +14,10 @@ namespace LibraryManager.EntityFramework
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Author> Authors { get; set; }
 
-        public LibraryManagerDbContext(DbContextOptions options) : base(options) { }
+        public LibraryManagerDbContext(DbContextOptions options) : base(options) 
+        {
+            Database.EnsureCreated();
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

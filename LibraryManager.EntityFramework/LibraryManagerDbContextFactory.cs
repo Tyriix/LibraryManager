@@ -15,7 +15,6 @@ namespace LibraryManager.EntityFramework
             
             var options = new DbContextOptionsBuilder<LibraryManagerDbContext>();
             options.UseSqlite($"Data Source=/{dbPath}/LMDatabase.db");
-
             return new LibraryManagerDbContext(options.Options);
         }
     }
