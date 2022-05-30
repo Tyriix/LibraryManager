@@ -1,6 +1,9 @@
 ﻿using LibraryManager.Domain.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LibraryManager.Domain.Services.ClientServices
 {
@@ -30,7 +33,31 @@ namespace LibraryManager.Domain.Services.ClientServices
                 Phone = client.Phone,
                 Email = client.Email
             };
+
+            if (newClient.FirstName.Any(ch => !Char.IsLetterOrDigit(ch)) == true
+                || newClient.LastName.Any(ch => !Char.IsLetterOrDigit(ch)) == true
+                || newClient.City.Any(ch => !Char.IsLetterOrDigit(ch)) == true)
+            {
+                MessageBox.Show("First name, last name or city can't contain numbers or special signs, try again.");
+                return newClient;
+            }
+
+            var allClients = _clientService.GetAll();
+            foreach (var item in allClients)
+            {
+                if (item.FirstName == newClient.FirstName 
+                    && item.LastName == newClient.LastName
+                    && item.City == newClient.City
+                    && item.Address == newClient.Address
+                    && item.Phone == newClient.Phone
+                    && item.Email == newClient.Email)
+                {
+                    MessageBox.Show("This client already exists");
+                    return newClient;
+                }
+            }
             await _clientService.Create(newClient);
+            MessageBox.Show("New client added.");
             return newClient;
         }
         /// <summary>

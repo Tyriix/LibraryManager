@@ -35,8 +35,6 @@ namespace LibraryManager.WPF.Commands.AddCommands
                 {
                     Name = _addViewModel.Genrename
                 });
-
-                MessageBox.Show("New genre added.");
             }
             catch (Exception e)
             {

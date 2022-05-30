@@ -1,6 +1,9 @@
 ﻿using LibraryManager.Domain.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LibraryManager.Domain.Services.AuthorServices
 {
@@ -27,7 +30,26 @@ namespace LibraryManager.Domain.Services.AuthorServices
                 FirstName = author.FirstName,
                 LastName = author.LastName,
             };
+
+            if (newAuthor.FirstName.Any(ch => !Char.IsLetterOrDigit(ch)) == true
+                || newAuthor.LastName.Any(ch => !Char.IsLetterOrDigit(ch)) == true)
+            {
+                MessageBox.Show("First name or last name can't contain numbers or special signs, try again.");
+                return newAuthor;
+            }
+            var allAuthors = _authorService.GetAll();
+            foreach (var item in allAuthors)
+            {
+                if (item.FirstName == newAuthor.FirstName
+                    && item.LastName == newAuthor.LastName)
+                {
+                    MessageBox.Show("This author already exists");
+                    return newAuthor;
+                }
+            }       
+            
             await _authorService.Create(newAuthor);
+            MessageBox.Show("New author added.");
             return newAuthor;
         }
         /// <summary>

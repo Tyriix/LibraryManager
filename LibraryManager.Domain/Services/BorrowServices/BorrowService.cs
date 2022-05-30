@@ -1,4 +1,5 @@
 ﻿using LibraryManager.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -34,8 +35,6 @@ namespace LibraryManager.Domain.Services.BorrowServices
             };
 
             await _borrowService.Create(newBorrow);
-            await _bookService.Update(book.Id, book);
-            await _clientService.Update(client.Id, client);
             return newBorrow;
         }
         /// <summary>

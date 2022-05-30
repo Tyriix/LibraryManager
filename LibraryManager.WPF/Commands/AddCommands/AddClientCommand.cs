@@ -39,8 +39,6 @@ namespace LibraryManager.WPF.Commands.AddCommands
                     Phone = _addViewModel.Phone,
                     Email = _addViewModel.Email
                 });
-
-                MessageBox.Show("New client added.");
             }
             catch (Exception e)
             {

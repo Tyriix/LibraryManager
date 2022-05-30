@@ -11,5 +11,6 @@ namespace LibraryManager.Domain.Services.BorrowServices
     {
         ICollection<Borrow> GetBorrows();
         Task<Borrow> BorrowBook(Borrow borrow, Book book, Client client);
+
     }
 }

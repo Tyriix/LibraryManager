@@ -35,8 +35,6 @@ namespace LibraryManager.WPF.Commands.AddCommands
                     FirstName = _addViewModel.Firstname,
                     LastName = _addViewModel.Lastname
                 });
-
-                MessageBox.Show("New author added.");
             }
             catch (Exception e)
             {

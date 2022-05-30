@@ -46,7 +46,6 @@ namespace LibraryManager.WPF.Commands.AddCommands
                     GenreId = _addViewModel.GenreId
                 }, author, genre);
 
-                MessageBox.Show("New book added.");
             }
             catch (Exception e)
             {

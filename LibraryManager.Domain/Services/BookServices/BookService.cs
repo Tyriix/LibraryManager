@@ -1,6 +1,7 @@
 ﻿using LibraryManager.Domain.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LibraryManager.Domain.Services.BookServices
 {
@@ -33,10 +34,10 @@ namespace LibraryManager.Domain.Services.BookServices
                 PublishDate = book.PublishDate,
                 AuthorId = author.Id,
                 GenreId = genre.Id
-            };
+            };                       
+
             await _bookService.Create(newBook);
-            await _authorService.Update(author.Id, author);
-            await _genreService.Update(genre.Id, genre);
+            MessageBox.Show("New book added.");
             return newBook;
         }
         /// <summary>
