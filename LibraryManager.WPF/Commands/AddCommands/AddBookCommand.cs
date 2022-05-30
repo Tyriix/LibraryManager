@@ -47,9 +47,9 @@ namespace LibraryManager.WPF.Commands.AddCommands
                 }, author, genre);
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show("Author or Genre doesn't exist, try again.");
             }
         }
 
