@@ -35,8 +35,8 @@ namespace LibraryManager.WPF.Commands.AddCommands
         {
             try
             {
-                Author author = await authorDataService.Get(1);
-                Genre genre = await genreDataService.Get(1);
+                Author author = await authorDataService.Get(_addViewModel.AuthorId);
+                Genre genre = await genreDataService.Get(_addViewModel.GenreId);
                 Book book = await _addBookService.AddBook(new Book()
                 {
                     Title = _addViewModel.Title,

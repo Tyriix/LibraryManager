@@ -48,7 +48,7 @@ namespace LibraryManager.WPF.Commands.AddCommands
             }
             catch (Exception)
             {
-                MessageBox.Show("Try again");
+                MessageBox.Show("This Client or Book don't exist, try again.");
             }
         }
     }
