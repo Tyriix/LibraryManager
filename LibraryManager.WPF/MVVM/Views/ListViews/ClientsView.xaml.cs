@@ -38,7 +38,7 @@ namespace LibraryManager.WPF.MVVM.Views
             {
                 if (borrow.ClientId == int.Parse(itemId))
                 {
-                    if (MessageBox.Show("There are borrows that use this client. \nDo you want to delete the clients and borrows that use it?", "", MessageBoxButton.YesNo) == MessageBoxResult.No)
+                    if (MessageBox.Show("There are borrows that use this client. \nDo you want to delete the client and borrows that use him?", "", MessageBoxButton.YesNo) == MessageBoxResult.No)
                     {
                         return;
                     }

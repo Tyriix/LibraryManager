@@ -40,7 +40,7 @@ namespace LibraryManager.WPF.MVVM.Views
             {
                 if (book.GenreId == int.Parse(itemId))
                 {
-                    if (MessageBox.Show("There are books that use this author. \nDo you want to delete the autor and books that use it?", "", MessageBoxButton.YesNo) == MessageBoxResult.No)
+                    if (MessageBox.Show("There are books that use this author. \nDo you want to delete the autor and books that use him?", "", MessageBoxButton.YesNo) == MessageBoxResult.No)
                     {
                         return;
                     }

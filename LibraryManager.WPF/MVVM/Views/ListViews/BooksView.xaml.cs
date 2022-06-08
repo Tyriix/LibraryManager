@@ -24,6 +24,7 @@ namespace LibraryManager.WPF.MVVM.Views
     public partial class BooksView : UserControl
     {
         private readonly IDataService<Book> genreDataService = new GenericDataService<Book>(new LibraryManagerDbContextFactory());
+        private readonly IDataService<Borrow> borrowDataService = new GenericDataService<Borrow>(new LibraryManagerDbContextFactory());
 
         public BooksView()
         {
@@ -34,6 +35,18 @@ namespace LibraryManager.WPF.MVVM.Views
         {
             var button = (Button)sender;
             var itemId = button.CommandParameter.ToString();
+            var borrows = borrowDataService.GetAll();
+            foreach (var borrow in borrows)
+            {
+                if (borrow.ClientId == int.Parse(itemId))
+                {
+                    if (MessageBox.Show("There are borrows that use this book. \nDo you want to delete the book and borrows that use it?", "", MessageBoxButton.YesNo) == MessageBoxResult.No)
+                    {
+                        return;
+                    }
+                    break;
+                }
+            }
             genreDataService.Delete(int.Parse(itemId));
             DataContext = new BooksViewModel();
         }
