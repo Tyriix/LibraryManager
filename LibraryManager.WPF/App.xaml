@@ -12,7 +12,7 @@
                 <ResourceDictionary Source="Style/Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Style/Theme/ExitButtonTheme.xaml"/>
                 <ResourceDictionary Source="Style/Theme/TextBoxTheme.xaml"/>
-                <ResourceDictionary Source="Style/Theme/LoginButtonTheme.xaml"/>
+                <ResourceDictionary Source="Style/Theme/AddItemButtonTheme.xaml"/>
                 <ResourceDictionary Source="Style/Theme/MinimizeButtonTheme.xaml" />
                 <ResourceDictionary Source="Style/Theme/AddButtonTheme.xaml" />
                 <ResourceDictionary Source="Style/Theme/ListViewItemContainerTheme.xaml" />

@@ -38,7 +38,7 @@ namespace LibraryManager.WPF.MVVM.Views
             var borrows = borrowDataService.GetAll();
             foreach (var borrow in borrows)
             {
-                if (borrow.ClientId == int.Parse(itemId))
+                if (borrow.BookId == int.Parse(itemId))
                 {
                     if (MessageBox.Show("There are borrows that use this book. \nDo you want to delete the book and borrows that use it?", "", MessageBoxButton.YesNo) == MessageBoxResult.No)
                     {

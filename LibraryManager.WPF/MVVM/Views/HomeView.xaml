@@ -8,7 +8,6 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              FontFamily="/Fonts/#Poppins">
-
     <StackPanel>
         <TextBlock Text="Welcome"
                    Foreground="White"
@@ -17,25 +16,25 @@
                    HorizontalAlignment="Center" />
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center">
-            <Border Width="400"
-                    Height="200">
+            <Border Width="450"
+                    Height="280">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0"
-                                         EndPoint="1,2">
+                                         EndPoint="1,1">
                         <GradientStop Color="#2D4263"
                                       Offset="0" />
                         <GradientStop Color="#2D4263"
-                                      Offset="0.4" />
+                                      Offset="0.5" />
                         <GradientStop Color="#191919"
-                                      Offset="0.4" />
+                                      Offset="0.5" />
                         <GradientStop Color="#191919"
                                       Offset="1" />
                     </LinearGradientBrush>
                 </Border.Background>
                 <Border.Clip>
-                    <RectangleGeometry RadiusX="10"
-                                       RadiusY="10"
-                                       Rect="0,0,400,200" />
+                    <RectangleGeometry RadiusX="100"
+                                       RadiusY="100"
+                                       Rect="0,0,450,280" />
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
@@ -48,7 +47,7 @@
                                    Margin="25,60,0,0" />
                     </StackPanel>
                     <Image Source="/MVVM/Views/librarian.png"
-                           Margin="257,10,-65,-19"
+                           Margin="210,10,-18,-19"
                            RenderTransformOrigin="0.5,0.5">
                         <Image.RenderTransform>
                             <TransformGroup>

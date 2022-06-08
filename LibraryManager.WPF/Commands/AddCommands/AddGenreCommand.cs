@@ -55,9 +55,9 @@ namespace LibraryManager.WPF.Commands.AddCommands
                 await _dataService.Create(newGenre);
                 MessageBox.Show("New genre added.");
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show("One of the fields was empty, try again.");
             }
         }
 
