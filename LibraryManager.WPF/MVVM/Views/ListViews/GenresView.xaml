@@ -15,7 +15,7 @@
         <ListView Grid.Column="0"
                   HorizontalAlignment="Center"
                   ItemsSource="{Binding Genres}"
-                  x:Name="bookList"
+                  x:Name="genreList"
                   Background="#FF22202F"
                   BorderBrush="{x:Null}"
                   Foreground="White"
@@ -41,6 +41,21 @@
                             <DataTemplate>
                                 <TextBlock Text="{Binding Name}"
                                            TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Delete"
+                                    x:Name="Delete"
+                                    Width="70"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Height="20"
+                                        Content="DELETE"
+                                        Click="Delete_Click"
+                                        CommandParameter="{Binding Id}">
+                                    
+                                </Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

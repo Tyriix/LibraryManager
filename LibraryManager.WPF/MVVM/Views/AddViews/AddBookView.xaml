@@ -66,8 +66,23 @@
                  Grid.Column="2"
                  MinWidth="150"
                  Margin="0,0,0,10" />
-        <!--Address-->
+        
+        
+        <!--Genre Name-->
         <TextBlock Grid.Row="4"
+                   Grid.Column="1"
+                   Margin="0,0,0,10"
+                   Foreground="White">
+            Genre Name:
+        </TextBlock>
+        <TextBox x:Name="genreName"
+                 Text="{Binding GenreName, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="4"
+                 Grid.Column="2"
+                 MinWidth="150"
+                 Margin="0,0,0,10" />
+        <!--Author Id-->
+        <TextBlock Grid.Row="5"
                    Grid.Column="1"
                    Margin="0,0,0,10"
                    Foreground="White">
@@ -75,19 +90,6 @@
         </TextBlock>
         <TextBox x:Name="authorId"
                  Text="{Binding AuthorId, UpdateSourceTrigger=PropertyChanged}"
-                 Grid.Row="4"
-                 Grid.Column="2"
-                 MinWidth="150"
-                 Margin="0,0,0,10" />
-        <!--Phone-->
-        <TextBlock Grid.Row="5"
-                   Grid.Column="1"
-                   Margin="0,0,0,10"
-                   Foreground="White">
-            Genre Id:
-        </TextBlock>
-        <TextBox x:Name="genreId"
-                 Text="{Binding GenreId, UpdateSourceTrigger=PropertyChanged}"
                  Grid.Row="5"
                  Grid.Column="2"
                  MinWidth="150"

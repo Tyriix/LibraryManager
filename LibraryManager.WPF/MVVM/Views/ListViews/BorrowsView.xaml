@@ -33,20 +33,29 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Book Id"
-                                    x:Name="BookId"
-                                    Width="100"
+                    <GridViewColumn Header="Borrowed Date"
+                                    x:Name="BorrowedDate"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding BookId}"
+                                <TextBlock Text="{Binding BorrowedDate}"
                                            TextWrapping="Wrap" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+                    <GridViewColumn Header="Returned Date"
+                                    x:Name="ReturnedDate"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ReturnedDate}"
+                                           TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
                     <GridViewColumn Header="Client Id"
                                     x:Name="ClientId"
-                                    Width="100"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -55,13 +64,32 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Borrow Date"
-                                    x:Name="BorrowDate"
-                                    Width="100"
+                    <GridViewColumn Header="Client Full Name"
+                                    x:Name="ClientFullName"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding BorrowedDate}"
+                                <TextBlock Text="{Binding ClientFullName}"
+                                           TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Book Id"
+                                    x:Name="BookId"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding BookId}"
+                                           TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Book Title"
+                                    x:Name="BookTitle"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding BookTitle}"
                                            TextWrapping="Wrap" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

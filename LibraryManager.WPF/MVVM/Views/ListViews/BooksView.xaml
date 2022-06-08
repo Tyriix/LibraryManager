@@ -20,73 +20,73 @@
                   Background="#FF22202F"
                   BorderBrush="{x:Null}"
                   Foreground="White"
+                  HorizontalContentAlignment="Stretch"
                   ItemContainerStyle="{StaticResource ListViewItemContainerTheme}">
             <ListView.View>
-                <GridView ColumnHeaderContainerStyle="{StaticResource HeaderContainerTheme}">
+                <GridView>
                     <GridViewColumn Header="Id"
                                     x:Name="Id"
-                                    Width="30"
-                                    
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Id}"
-                                           TextWrapping="Wrap"/>
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Title"
                                     x:Name="Title"
-                                    Width="100"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Title}"
-                                           TextWrapping="Wrap"/>
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Page Count"
                                     x:Name="PageCount"
-                                    Width="100"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding PageCount}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Publish Date"
                                     x:Name="PublishDate"
-                                    Width="100"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding PublishDate}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Author Id"
-                                    x:Name="AuthorId"
-                                    Width="60"
+                    <GridViewColumn Header="Author Full Name"
+                                    x:Name="AuthorFullName"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding AuthorId}"
-                                           TextWrapping="Wrap" />
+                                <TextBlock Text="{Binding AuthorFullName}"
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Genre Id"
-                                    x:Name="GenreId"
-                                    Width="60"
+                    <GridViewColumn Header="Genre Name"
+                                    x:Name="GenreName"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding GenreId}"
-                                           TextWrapping="Wrap" />
+                                <TextBlock Text="{Binding GenreName}"
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

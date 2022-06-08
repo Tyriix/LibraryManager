@@ -1,6 +1,7 @@
 ﻿using LibraryManager.Domain.Models;
 using LibraryManager.Domain.Services;
 using LibraryManager.Domain.Services.BookServices;
+using LibraryManager.Domain.Services.GenreServices;
 using LibraryManager.EntityFramework;
 using LibraryManager.EntityFramework.Services;
 using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
@@ -36,7 +37,16 @@ namespace LibraryManager.WPF.Commands.AddCommands
             try
             {
                 Author author = await authorDataService.Get(_addViewModel.AuthorId);
-                Genre genre = await genreDataService.Get(_addViewModel.GenreId);
+                var genres = genreDataService.GetAll();
+                Genre genre = new Genre();
+                foreach (var item in genres)
+                {
+                    if (item.Name == _addViewModel.GenreName)
+                    {
+                        genre = await genreDataService.Get(item.Id);
+                    }
+                }
+
                 Book book = await _addBookService.AddBook(new Book()
                 {
                     Title = _addViewModel.Title,

@@ -51,7 +51,16 @@ namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
                 OnPropertyChanged(nameof(PublishDate));
             }
         }
-        
+        private string _genreName;
+        public string GenreName
+        {
+            get { return _genreName; }
+            set
+            {
+                _genreName = value;
+                OnPropertyChanged(nameof(GenreName));
+            }
+        }
         private int _genreId;
         public int GenreId
         {

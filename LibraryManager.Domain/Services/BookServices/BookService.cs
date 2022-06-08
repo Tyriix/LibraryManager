@@ -12,14 +12,10 @@ namespace LibraryManager.Domain.Services.BookServices
     public class BookService : IBookService
     {
         private readonly IDataService<Book> _bookService;
-        private readonly IDataService<Author> _authorService;
-        private readonly IDataService<Genre> _genreService;
 
-        public BookService(IDataService<Book> bookService, IDataService<Author> authorService, IDataService<Genre> genreService)
+        public BookService(IDataService<Book> bookService)
         {
             _bookService = bookService;
-            _authorService = authorService;
-            _genreService = genreService;
         }
 
         /// <summary>

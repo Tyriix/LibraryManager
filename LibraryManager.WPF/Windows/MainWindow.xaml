@@ -15,12 +15,12 @@
         WindowStartupLocation="CenterScreen"
         FontFamily="/Fonts/#Poppins">
 
-    <Border Background="#272537"
+    <Border Background="#202124"
             CornerRadius="15">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="200" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
@@ -81,9 +81,9 @@
                 
             </StackPanel>
             <controls:NavigationBar Grid.Row="1"
-                                    Grid.Column="0"/>
+                                    Grid.Column="1"/>
             <controls:AddBar Grid.Row="2"
-                             Grid.Column="1"
+                             Grid.Column="0"
                              VerticalAlignment="Center"
                              HorizontalAlignment="Center"/>
             <!--<TextBox Width="250"
@@ -94,7 +94,7 @@
                      Grid.Column="1"
                      Style="{StaticResource ModernTextBox}"/>-->
             <ContentControl Grid.Row="1"
-                            Grid.Column="1"
+                            Grid.Column="0"
                             Margin="10"
                             Content="{Binding Navigator.CurrentViewModel}"/>
         </Grid>

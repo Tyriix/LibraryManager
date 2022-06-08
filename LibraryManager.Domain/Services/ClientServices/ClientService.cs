@@ -26,9 +26,9 @@ namespace LibraryManager.Domain.Services.ClientServices
         {
             Client newClient = new Client()
             {
-                FirstName = client.FirstName,
-                LastName = client.LastName,
-                City = client.City,
+                FirstName = char.ToUpper(client.FirstName[0]) + client.FirstName.Substring(1) ,
+                LastName = char.ToUpper(client.LastName[0]) + client.LastName.Substring(1),
+                City = char.ToUpper(client.City[0]) + client.City.Substring(1),
                 Address = client.Address,
                 Phone = client.Phone,
                 Email = client.Email
