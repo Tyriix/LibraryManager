@@ -1,6 +1,5 @@
-﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services;
-using LibraryManager.Domain.Services.BorrowServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.EntityFramework;
 using LibraryManager.EntityFramework.Services;
 using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
@@ -17,14 +16,14 @@ namespace LibraryManager.WPF.Commands.AddCommands
     {
         public event EventHandler CanExecuteChanged { add { } remove { } }
         private readonly AddBorrowViewModel _addViewModel;
-        private readonly IBorrowService _addBorrowService;
+        private readonly IDataService<Borrow> _dataService;
         private readonly IDataService<Client> clientDataService = new GenericDataService<Client>(new LibraryManagerDbContextFactory());
         private readonly IDataService<Book> bookDataService = new GenericDataService<Book>(new LibraryManagerDbContextFactory());
 
-        public AddBorrowCommand(AddBorrowViewModel viewModel, IBorrowService addBorrowService)
+        public AddBorrowCommand(AddBorrowViewModel viewModel, IDataService<Borrow> dataService)
         {
             _addViewModel = viewModel;
-            _addBorrowService = addBorrowService;
+            _dataService = dataService;
         }
 
         public bool CanExecute(object parameter)
@@ -37,13 +36,14 @@ namespace LibraryManager.WPF.Commands.AddCommands
             {
                 Client client = await clientDataService.Get(_addViewModel.ClientId);
                 Book book = await bookDataService.Get(_addViewModel.BookId);
-                Borrow borrow = await _addBorrowService.BorrowBook(new Borrow()
+                Borrow newBorrow = new Borrow()
                 {
                     BorrowedDate = DateTime.Now,
-                    BookId = _addViewModel.BookId,
-                    ClientId = _addViewModel.ClientId
-                },book, client);
+                    ClientId = client.Id,
+                    BookId = book.Id
+                };
 
+                await _dataService.Create(newBorrow);
                 MessageBox.Show($"Borrowed {book.Title} to {client.FirstName} {client.LastName}.");
             }
             catch (Exception)

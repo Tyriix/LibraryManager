@@ -1,5 +1,5 @@
-﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace LibraryManager.EntityFramework.Services
             return entity;
         }
 
-        public  ICollection<T> GetAll()
+        public ICollection<T> GetAll()
         {
             using LibraryManagerDbContext context = _contextFactory.CreateDbContext();
 

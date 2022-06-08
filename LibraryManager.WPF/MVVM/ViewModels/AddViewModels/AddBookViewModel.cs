@@ -1,4 +1,5 @@
-﻿using LibraryManager.Domain.Services.BookServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.WPF.Commands.AddCommands;
 using System;
 using System.Windows.Input;
@@ -75,9 +76,9 @@ namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
         }
 
         public ICommand AddBookCommand { get; set; }
-        public AddBookViewModel(IBookService addBookService)
+        public AddBookViewModel(IDataService<Book> dataService)
         {
-            AddBookCommand = new AddBookCommand(this, addBookService);
+            AddBookCommand = new AddBookCommand(this, dataService);
         }
     }
 }

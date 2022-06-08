@@ -1,4 +1,5 @@
-﻿using LibraryManager.Domain.Services.GenreServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.WPF.Commands.AddCommands;
 using System.Windows.Input;
 
@@ -29,9 +30,9 @@ namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
         }
 
         public ICommand AddGenreCommand { get; set; }
-        public AddGenreViewModel(IGenreService addGenreService)
+        public AddGenreViewModel(IDataService<Genre> dataService)
         {
-            AddGenreCommand = new AddGenreCommand(this, addGenreService);
+            AddGenreCommand = new AddGenreCommand(this, dataService);
         }
     }
 }

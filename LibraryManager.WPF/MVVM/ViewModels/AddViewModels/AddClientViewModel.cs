@@ -1,4 +1,5 @@
-﻿using LibraryManager.Domain.Services.ClientServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.WPF.Commands.AddCommands;
 using System.Windows.Input;
 
@@ -84,9 +85,9 @@ namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
             }
         }
         public ICommand AddClientCommand { get; set; }
-        public AddClientViewModel(IClientService addClientService)
+        public AddClientViewModel(IDataService<Client> dataService)
         {
-            AddClientCommand = new AddClientCommand(this, addClientService);
+            AddClientCommand = new AddClientCommand(this, dataService);
         }
     }
 }

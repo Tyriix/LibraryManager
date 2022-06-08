@@ -16,7 +16,7 @@
                   HorizontalAlignment="Center"
                   ItemsSource="{Binding Authors}"
                   x:Name="bookList"
-                  Background="#FF22202F"
+                  Background="#202124"
                   BorderBrush="{x:Null}"
                   Foreground="White"
                   ItemContainerStyle="{StaticResource ListViewItemContainerTheme}">
@@ -29,7 +29,8 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Id}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -40,7 +41,8 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding FirstName}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -51,7 +53,8 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding LastName}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

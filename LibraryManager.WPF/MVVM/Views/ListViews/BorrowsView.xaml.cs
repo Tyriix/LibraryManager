@@ -1,5 +1,5 @@
-﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.EntityFramework;
 using LibraryManager.EntityFramework.Services;
 using LibraryManager.WPF.MVVM.ViewModels.ListViewModels;
@@ -23,7 +23,7 @@ namespace LibraryManager.WPF.MVVM.Views
     /// </summary>
     public partial class BorrowsView : UserControl
     {
-        private readonly IDataService<Borrow> genreDataService = new GenericDataService<Borrow>(new LibraryManagerDbContextFactory());
+        private readonly IDataService<Borrow> borrowDataService = new GenericDataService<Borrow>(new LibraryManagerDbContextFactory());
         public BorrowsView()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace LibraryManager.WPF.MVVM.Views
         {
             var button = (Button)sender;
             var itemId = button.CommandParameter.ToString();
-            var borrows = genreDataService.GetAll();
+            var borrows = borrowDataService.GetAll();
             Borrow returnedBorrow = new Borrow();
             foreach (var borrow in borrows)
             {
@@ -42,7 +42,14 @@ namespace LibraryManager.WPF.MVVM.Views
                     returnedBorrow.ReturnedDate = DateTime.Now;
                 }
             }
-            genreDataService.Update(int.Parse(itemId), returnedBorrow);
+            borrowDataService.Update(int.Parse(itemId), returnedBorrow);
+            DataContext = new BorrowsViewModel();
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (Button)sender;
+            var itemId = button.CommandParameter.ToString();
+            borrowDataService.Delete(int.Parse(itemId));
             DataContext = new BorrowsViewModel();
         }
     }

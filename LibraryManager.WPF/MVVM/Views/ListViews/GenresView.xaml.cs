@@ -1,5 +1,5 @@
-﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.EntityFramework;
 using LibraryManager.EntityFramework.Services;
 using LibraryManager.WPF.Commands;
@@ -28,6 +28,7 @@ namespace LibraryManager.WPF.MVVM.Views
     public partial class GenresView : UserControl
     {
         private readonly IDataService<Genre> genreDataService = new GenericDataService<Genre>(new LibraryManagerDbContextFactory());
+        private readonly IDataService<Book> bookDataService = new GenericDataService<Book>(new LibraryManagerDbContextFactory());
         public GenresView()
         {
             InitializeComponent();
@@ -37,6 +38,17 @@ namespace LibraryManager.WPF.MVVM.Views
         {
             var button = (Button)sender;
             var itemId = button.CommandParameter.ToString();
+            var books = bookDataService.GetAll();
+            foreach (var book in books)
+            {
+                if (book.AuthorId == int.Parse(itemId))
+                {
+                    if (MessageBox.Show("There are books that use this genre. \nDo you want to delete the genre and books that use it?", "", MessageBoxButton.YesNo) == MessageBoxResult.No)
+                    {
+                        return;
+                    }
+                }
+            }
             genreDataService.Delete(int.Parse(itemId));
             DataContext = new GenresViewModel();
         }

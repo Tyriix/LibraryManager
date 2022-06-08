@@ -1,7 +1,8 @@
-﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services.GenreServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -14,12 +15,12 @@ namespace LibraryManager.WPF.Commands.AddCommands
     {
         public event EventHandler CanExecuteChanged { add { } remove { } }
         private readonly AddGenreViewModel _addViewModel;
-        private readonly IGenreService _addGenreService;
+        private readonly IDataService<Genre> _dataService;
 
-        public AddGenreCommand(AddGenreViewModel addViewModel, IGenreService addGenreService)
+        public AddGenreCommand(AddGenreViewModel addViewModel, IDataService<Genre> dataService)
         {
             _addViewModel = addViewModel;
-            _addGenreService = addGenreService;
+            _dataService = dataService;
         }
 
         public bool CanExecute(object parameter)
@@ -31,10 +32,28 @@ namespace LibraryManager.WPF.Commands.AddCommands
         {
             try
             {
-                Genre genre = await _addGenreService.AddGenre(new Genre()
+                Genre newGenre = new Genre()
                 {
-                    Name = _addViewModel.Genrename
-                });
+                    Name = char.ToUpper(_addViewModel.Genrename[0]) + _addViewModel.Genrename[1..].ToLower()
+                };
+                if (newGenre.Name.Any(char.IsDigit) == true
+                    || newGenre.Name.Any(ch => char.IsSymbol(ch)) == true
+                    || newGenre.Name.Any(ch => char.IsPunctuation(ch)) == true)
+                {
+                    MessageBox.Show("Genre name can't contain numbers or symbols, try again.");
+                    return;
+                }
+                var allGenres = _dataService.GetAll();
+                foreach (var item in allGenres)
+                {
+                    if (item.Name == newGenre.Name)
+                    {
+                        MessageBox.Show("This genre already exists");
+                        return;
+                    }
+                }
+                await _dataService.Create(newGenre);
+                MessageBox.Show("New genre added.");
             }
             catch (Exception e)
             {

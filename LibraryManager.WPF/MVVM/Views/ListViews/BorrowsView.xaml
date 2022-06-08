@@ -16,7 +16,7 @@
                   HorizontalAlignment="Center"
                   ItemsSource="{Binding Borrows}"
                   x:Name="bookList"
-                  Background="#FF22202F"
+                  Background="#202124"
                   BorderBrush="{x:Null}"
                   Foreground="White"
                   ItemContainerStyle="{StaticResource ListViewItemContainerTheme}">
@@ -29,7 +29,8 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Id}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -40,7 +41,8 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding BorrowedDate}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -51,7 +53,8 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding ReturnedDate}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -62,17 +65,20 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding ClientId}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Client Full Name"
                                     x:Name="ClientFullName"
+                                    Width="100"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding ClientFullName}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -83,17 +89,20 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding BookId}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Book Title"
                                     x:Name="BookTitle"
+                                    Width="80"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding BookTitle}"
-                                           TextWrapping="Wrap" />
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -106,6 +115,21 @@
                                 <Button Height="20"
                                         Content="RETURN"
                                         Click="Return_Click"
+                                        Style="{StaticResource DeleteButtonTheme}"
+                                        CommandParameter="{Binding Id}">
+                                </Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Delete"
+                                    x:Name="Delete"
+                                    Width="70"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Height="20"
+                                        Content="DELETE"
+                                        Click="Delete_Click"
                                         Style="{StaticResource DeleteButtonTheme}"
                                         CommandParameter="{Binding Id}">
                                 </Button>

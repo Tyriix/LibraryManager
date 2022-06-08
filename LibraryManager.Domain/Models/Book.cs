@@ -9,7 +9,6 @@ namespace LibraryManager.Domain.Models
     /// </summary>
     public class Book : DomainObject
     {
-        [Column(TypeName = "nvarchar(35)")]
         public string Title { get; set; }
         public int PageCount { get; set; }
         public DateTime PublishDate { get; set; }

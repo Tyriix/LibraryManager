@@ -17,7 +17,7 @@
                   HorizontalAlignment="Center"
                   ItemsSource="{Binding Books}"
                   x:Name="bookList"
-                  Background="#FF22202F"
+                  Background="#202124"
                   BorderBrush="{x:Null}"
                   Foreground="White"
                   HorizontalContentAlignment="Stretch"

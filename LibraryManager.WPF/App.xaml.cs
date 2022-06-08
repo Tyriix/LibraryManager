@@ -1,10 +1,5 @@
-﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services;
-using LibraryManager.Domain.Services.AuthorServices;
-using LibraryManager.Domain.Services.BookServices;
-using LibraryManager.Domain.Services.BorrowServices;
-using LibraryManager.Domain.Services.ClientServices;
-using LibraryManager.Domain.Services.GenreServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.EntityFramework;
 using LibraryManager.EntityFramework.Services;
 using LibraryManager.WPF.MVVM.ViewModels;
@@ -47,13 +42,6 @@ namespace LibraryManager.WPF
                     services.AddSingleton<IDataService<Book>, GenericDataService<Book>>();
                     services.AddSingleton<IDataService<Borrow>, GenericDataService<Borrow>>();
 
-                    services.AddSingleton<IClientService, ClientService>();
-                    services.AddSingleton<IBookService, BookService>();
-                    services.AddSingleton<IGenreService, GenreService>();
-                    services.AddSingleton<IAuthorService, AuthorService>();
-                    services.AddSingleton<IGenreService, GenreService>();
-                    services.AddSingleton<IBorrowService, BorrowService>();
-
                     services.AddSingleton<ILibraryManagerViewModelFactory, LibraryManagerViewModelFactory>();
 
                     //Registering CreateViewModel function
@@ -85,27 +73,27 @@ namespace LibraryManager.WPF
 
                     services.AddSingleton<CreateViewModel<AddClientViewModel>>(services =>
                     {
-                        return () => new AddClientViewModel(services.GetRequiredService<IClientService>());
+                        return () => new AddClientViewModel(services.GetRequiredService<IDataService<Client>>());
                     });
 
                     services.AddSingleton<CreateViewModel<AddGenreViewModel>>(services =>
                     {
-                        return () => new AddGenreViewModel(services.GetRequiredService<IGenreService>());
+                        return () => new AddGenreViewModel(services.GetRequiredService<IDataService<Genre>>());
                     });
 
                     services.AddSingleton<CreateViewModel<AddAuthorViewModel>>(services =>
                     {
-                        return () => new AddAuthorViewModel(services.GetRequiredService<IAuthorService>());
+                        return () => new AddAuthorViewModel(services.GetRequiredService<IDataService<Author>>());
                     });
 
                     services.AddSingleton<CreateViewModel<AddBookViewModel>>(services =>
                     {
-                        return () => new AddBookViewModel(services.GetRequiredService<IBookService>());
+                        return () => new AddBookViewModel(services.GetRequiredService<IDataService<Book>>());
                     });
 
                     services.AddSingleton<CreateViewModel<AddBorrowViewModel>>(services =>
                     {
-                        return () => new AddBorrowViewModel(services.GetRequiredService<IBorrowService>());
+                        return () => new AddBorrowViewModel(services.GetRequiredService<IDataService<Borrow>>());
                     });
 
                     services.AddScoped<INavigator, Navigator>();

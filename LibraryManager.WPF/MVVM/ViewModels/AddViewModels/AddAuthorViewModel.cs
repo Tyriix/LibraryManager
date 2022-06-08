@@ -1,4 +1,5 @@
-﻿using LibraryManager.Domain.Services.AuthorServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.WPF.Commands.AddCommands;
 using System.Windows.Input;
 
@@ -40,9 +41,9 @@ namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
         }
 
         public ICommand AddAuthorCommand { get; set; }
-        public AddAuthorViewModel(IAuthorService addAuthorService)
+        public AddAuthorViewModel(IDataService<Author> dataService)
         {
-            AddAuthorCommand = new AddAuthorCommand(this, addAuthorService);
+            AddAuthorCommand = new AddAuthorCommand(this, dataService);
         }
     }
 }

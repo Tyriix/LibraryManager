@@ -4,7 +4,7 @@
            TargetType="{x:Type GridViewColumnHeader}">
         
         <Setter Property="Background"
-                Value="#16151f" />
+                Value="#3C4042" />
         <Setter Property="Foreground"
                 Value="White" />
         <Setter Property="BorderBrush"

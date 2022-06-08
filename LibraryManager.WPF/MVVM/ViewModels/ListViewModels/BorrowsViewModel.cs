@@ -1,6 +1,5 @@
-﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services;
-using LibraryManager.Domain.Services.BorrowServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.EntityFramework.Services;
 using System;
 using System.Collections.Generic;
@@ -14,13 +13,12 @@ namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
     /// </summary>
     public class BorrowsViewModel : ViewModelBase
     {
-        readonly IDataService<Borrow> borrowDataService = new GenericDataService<Borrow>(new EntityFramework.LibraryManagerDbContextFactory());
+        readonly IDataService<Borrow> dataService = new GenericDataService<Borrow>(new EntityFramework.LibraryManagerDbContextFactory());
         readonly IDataService<Book> bookDataService = new GenericDataService<Book>(new EntityFramework.LibraryManagerDbContextFactory());
         readonly IDataService<Client> clientDataService = new GenericDataService<Client>(new EntityFramework.LibraryManagerDbContextFactory());
         private readonly ObservableCollection<ObservableBorrow> _borrows;
 
         public ICollection<ObservableBorrow> Borrows => _borrows;
-        public ICommand GetBorrows { get; set; }
 
         public class ObservableBorrow
         {
@@ -35,8 +33,7 @@ namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
 
         public BorrowsViewModel()
         {
-            IBorrowService getBooksService = new BorrowService(borrowDataService, clientDataService, bookDataService);
-            var borrows = getBooksService.GetBorrows();
+            var borrows = dataService.GetAll();
             _borrows = new ObservableCollection<ObservableBorrow>();
             foreach (var borrow in borrows)
             {

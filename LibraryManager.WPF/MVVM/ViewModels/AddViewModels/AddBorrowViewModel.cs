@@ -1,4 +1,5 @@
-﻿using LibraryManager.Domain.Services.BorrowServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.WPF.Commands.AddCommands;
 using System;
 using System.Windows.Input;
@@ -43,9 +44,9 @@ namespace LibraryManager.WPF.MVVM.ViewModels.AddViewModels
         }
 
         public ICommand AddBorrowCommand { get; set; }
-        public AddBorrowViewModel(IBorrowService addBorrowService)
+        public AddBorrowViewModel(IDataService<Borrow> dataService)
         {
-            AddBorrowCommand = new AddBorrowCommand(this, addBorrowService);
+            AddBorrowCommand = new AddBorrowCommand(this, dataService);
         }
     }
 }

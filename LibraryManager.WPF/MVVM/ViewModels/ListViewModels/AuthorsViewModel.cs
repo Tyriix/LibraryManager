@@ -1,6 +1,5 @@
-﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services;
-using LibraryManager.Domain.Services.AuthorServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.EntityFramework.Services;
 using Microsoft.Extensions.Hosting;
 using System.Collections.Generic;
@@ -17,14 +16,11 @@ namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
         
         readonly IDataService<Author> dataService = new GenericDataService<Author>(new EntityFramework.LibraryManagerDbContextFactory());
         private readonly ObservableCollection<Author> _authors;
-
         public ICollection<Author> Authors => _authors;
-        public ICommand GetAuthors { get; set; }
 
         public AuthorsViewModel()
         {
-            IAuthorService getClientsService = new AuthorService(dataService);
-            var authors = getClientsService.GetAuthors();
+            var authors = dataService.GetAll();
 
             _authors = new ObservableCollection<Author>(authors);
         }

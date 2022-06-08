@@ -19,7 +19,8 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Background" Value="#353340"/>
+            <Setter Property="Background"
+                    Value="#3C4042"/>
         </Style.Setters>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">

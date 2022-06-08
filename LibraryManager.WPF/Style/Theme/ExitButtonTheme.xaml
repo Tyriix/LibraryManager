@@ -21,7 +21,8 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Background" Value="#353340"/>
+            <Setter Property="Background"
+                    Value="#3C4042"/>
             <Setter Property="Border.CornerRadius" Value="0,15,0,0"/>
         </Style.Setters>
         <Style.Triggers>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LibraryManager.Domain.Services
+namespace LibraryManager.Domain
 {
     // <summary>
     // This is an interface for managing CRUD for all models.
@@ -11,7 +11,7 @@ namespace LibraryManager.Domain.Services
         ICollection<T> GetAll();
         Task<T> Get(int id);
         Task<T> Create(T entity);
-        Task<T> Update(int id,T entity);
+        Task<T> Update(int id, T entity);
         Task<bool> Delete(int id);
     }
 }

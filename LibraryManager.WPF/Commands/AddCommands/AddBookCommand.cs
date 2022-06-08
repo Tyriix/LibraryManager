@@ -1,7 +1,5 @@
-﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services;
-using LibraryManager.Domain.Services.BookServices;
-using LibraryManager.Domain.Services.GenreServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.EntityFramework;
 using LibraryManager.EntityFramework.Services;
 using LibraryManager.WPF.MVVM.ViewModels.AddViewModels;
@@ -18,14 +16,13 @@ namespace LibraryManager.WPF.Commands.AddCommands
     {
         public event EventHandler CanExecuteChanged { add { } remove { } }
         private readonly AddBookViewModel _addViewModel;
-        private readonly IBookService _addBookService;
-        private readonly IDataService<Author> authorDataService = new GenericDataService<Author>(new LibraryManagerDbContextFactory());
+        private readonly IDataService<Book> _dataService;
         private readonly IDataService<Genre> genreDataService = new GenericDataService<Genre>(new LibraryManagerDbContextFactory());
 
-        public AddBookCommand(AddBookViewModel viewModel, IBookService addBookService)
+        public AddBookCommand(AddBookViewModel viewModel, IDataService<Book> dataService)
         {
             _addViewModel = viewModel;
-            _addBookService = addBookService;
+            _dataService = dataService;
         }
 
         public bool CanExecute(object parameter)
@@ -36,9 +33,9 @@ namespace LibraryManager.WPF.Commands.AddCommands
         {
             try
             {
-                Author author = await authorDataService.Get(_addViewModel.AuthorId);
                 var genres = genreDataService.GetAll();
                 Genre genre = new Genre();
+
                 foreach (var item in genres)
                 {
                     if (item.Name == _addViewModel.GenreName)
@@ -46,20 +43,28 @@ namespace LibraryManager.WPF.Commands.AddCommands
                         genre = await genreDataService.Get(item.Id);
                     }
                 }
-
-                Book book = await _addBookService.AddBook(new Book()
+                Book newBook = new Book()
                 {
-                    Title = _addViewModel.Title,
+                    Title = char.ToUpper(_addViewModel.Title[0]) + _addViewModel.Title[1..].ToLower(),
                     PageCount = _addViewModel.PageCount,
                     PublishDate = _addViewModel.PublishDate,
                     AuthorId = _addViewModel.AuthorId,
-                    GenreId = _addViewModel.GenreId
-                }, author, genre);
+                    GenreId = genre.Id
+                };
+
+                if (newBook.PageCount <= 0)
+                {
+                    MessageBox.Show("Book can't have 0 or less pages, try again.");
+                    return;
+                }
+
+                await _dataService.Create(newBook);
+                MessageBox.Show("New book added.");
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Author or Genre doesn't exist, try again.");
+                MessageBox.Show("One of the fields was empty, try again.");
             }
         }
 

@@ -8,7 +8,6 @@ namespace LibraryManager.Domain.Models
     /// </summary>
     public class Genre : DomainObject
     {
-        [Column(TypeName = "nvarchar(20)")]
         public string Name { get; set; }
 
         public ICollection<Book> Books { get; set; }

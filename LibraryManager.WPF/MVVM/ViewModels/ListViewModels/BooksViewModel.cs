@@ -1,6 +1,5 @@
-﻿using LibraryManager.Domain.Models;
-using LibraryManager.Domain.Services;
-using LibraryManager.Domain.Services.BookServices;
+﻿using LibraryManager.Domain;
+using LibraryManager.Domain.Models;
 using LibraryManager.EntityFramework.Services;
 using System;
 using System.Collections.Generic;
@@ -14,15 +13,13 @@ namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
     /// </summary>
     public class BooksViewModel : ViewModelBase
     {
-        readonly IDataService<Book> bookDataService = new GenericDataService<Book>(new EntityFramework.LibraryManagerDbContextFactory());
+        readonly IDataService<Book> dataService = new GenericDataService<Book>(new EntityFramework.LibraryManagerDbContextFactory());
         readonly IDataService<Author> authorDataService = new GenericDataService<Author>(new EntityFramework.LibraryManagerDbContextFactory());
         readonly IDataService<Genre> genreDataService = new GenericDataService<Genre>(new EntityFramework.LibraryManagerDbContextFactory());
 
         private readonly ObservableCollection<ObservableBook> _books;
 
         public ICollection<ObservableBook> Books => _books;
-        public ICommand GetBooks { get; set; }
-
         public class ObservableBook
         {
             public int Id { get; set; }
@@ -37,9 +34,7 @@ namespace LibraryManager.WPF.MVVM.ViewModels.ListViewModels
         public BooksViewModel()
         {
             
-            IBookService getBooksService = new BookService(bookDataService);
-            
-            var books = getBooksService.GetBooks();
+            var books = dataService.GetAll();
             _books = new ObservableCollection<ObservableBook>();
             foreach (var book in books)
             {
