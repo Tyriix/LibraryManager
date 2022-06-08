@@ -55,6 +55,21 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+                    <GridViewColumn Header="Delete"
+                                    x:Name="Delete"
+                                    Width="70"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Height="20"
+                                        Content="DELETE"
+                                        Click="Delete_Click"
+                                        Style="{StaticResource DeleteButtonTheme}"
+                                        CommandParameter="{Binding Id}">
+                                </Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

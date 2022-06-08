@@ -26,6 +26,7 @@
                 <GridView>
                     <GridViewColumn Header="Id"
                                     x:Name="Id"
+                                    Width="30"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -37,6 +38,7 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Title"
                                     x:Name="Title"
+                                    Width="100"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -48,6 +50,7 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Page Count"
                                     x:Name="PageCount"
+                                    Width="90"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -59,6 +62,7 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Publish Date"
                                     x:Name="PublishDate"
+                                    Width="100"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -68,8 +72,9 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Author Full Name"
+                    <GridViewColumn Header="Author's Full Name"
                                     x:Name="AuthorFullName"
+                                    Width="120"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -81,12 +86,28 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Genre Name"
                                     x:Name="GenreName"
+                                    Width="100"
                                     HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding GenreName}"
                                            TextWrapping="Wrap"
                                            HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Delete"
+                                    x:Name="Delete"
+                                    Width="70"
+                                    HeaderContainerStyle="{StaticResource HeaderContainerTheme}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Height="20"
+                                        Content="DELETE"
+                                        Click="Delete_Click"
+                                        Style="{StaticResource DeleteButtonTheme}"
+                                        CommandParameter="{Binding Id}">
+                                </Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

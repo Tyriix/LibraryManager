@@ -53,8 +53,8 @@
                                 <Button Height="20"
                                         Content="DELETE"
                                         Click="Delete_Click"
+                                        Style="{StaticResource DeleteButtonTheme}"
                                         CommandParameter="{Binding Id}">
-                                    
                                 </Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
